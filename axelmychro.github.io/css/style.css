@@ -1,0 +1,220 @@
+:root {
+  --special: #00aaff;
+  --primary: #2e2e2e;
+  --secondary: #686c6f;
+  --bg: #f2f2f4;
+  --subtle: #e6e8ed;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Fira Code", monospace;
+  background-color: var(--bg);
+  color: var(--primary);
+  max-width: 60%;
+  margin: auto;
+  min-height: 2000px;
+}
+
+/* navigator */
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 0;
+  position: relative;
+  z-index: 999;
+}
+
+/* Axel */
+.navigator .navigator-logo {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  color: var(--primary);
+}
+
+/* .logo */
+.navigator .navigator-logo a {
+  color: var(--primary);
+  transition: all 0.5s ease;
+  cursor: default;
+}
+.navigator .navigator-logo a:hover {
+  color: var(--glow);
+  text-shadow: 0 0 2px var(--glow), 0 0 4px var(--glow), 0 0 8px var(--glow);
+}
+
+/* menu at the center */
+.navigator .navigator-nav {
+  margin-left: auto;
+}
+.navigator .navigator-nav a {
+  color: var(--secondary);
+  display: inline;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 4px;
+}
+/* if hovered with cursor */
+.navigator .navigator-nav a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+/* right menu */
+.navigator-ex {
+  background-color: var(--primary);
+}
+.navigator .navigator-ex a {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--bg);
+  padding: 0 8px;
+}
+/* !! part of: mobile responsive hidden menu engineering  */
+/* hide menu */
+#menu {
+  display: none;
+  width: 14;
+}
+
+/* mychro box*/
+.mychro {
+  margin: 10vh 0 10vh;
+  background-color: var(--primary);
+  padding: 2rem 2rem;
+  position: relative;
+}
+.mychro .content {
+  color: var(--bg);
+  text-align: left;
+}
+.mychro .content h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 4em;
+  color: var(--bg);
+  margin-bottom: 1.4rem;
+}
+.mychro .content h1 span {
+  color: var(--special);
+}
+.mychro .content p {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+.mychro .content p span {
+  color: var(--subtle);
+  font-weight: 700;
+}
+.mychro .content .mcr {
+  color: #1fd660;
+}
+/* mychro box */
+
+/* common divider bar */
+.divider {
+  height: 4px;
+  background-color: var(--subtle);
+}
+/* common divider bar */
+
+/* about */
+.about {
+  display: flex;
+  align-items: flex-start;
+  margin: 10vh 0 10vh;
+}
+/* imathe */
+.container {
+  text-align: center;
+  background-color: white;
+  /* padding: 20px 10px 20px; */
+  /* border-radius: 10px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+.profile {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2vw;
+  /* margin-bottom: 20px; */
+}
+/* imathe */
+.about h2 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  margin: 0 0 1.2rem;
+}
+.about h2 span {
+  color: var(--special);
+}
+.about p {
+  color: var(--secondary);
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 2rem 0 0;
+}
+/* about end */
+
+/* !!! media queries !!! */
+/* laptop */
+@media (max-width: 1366px) {
+  body {
+    max-width: 80%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  body {
+    max-width: 85%;
+  }
+}
+/* mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 60%;
+  }
+  body {
+    max-width: 90%;
+  }
+  #menu {
+    display: inline-block;
+  }
+  /* !!! mobile responsive hidden menu engineering !!! */
+  /* hide it to the right, off-screen */
+  .navigator .navigator-nav {
+    position: absolute;
+    top: -4vh;
+    transition: 0.5s;
+  }
+  .navigator .navigator-nav a {
+    font-size: 1.5rem;
+  }
+  /* when menu is clicked, script will switch it to "active" class */
+  .navigator .navigator-nav.active {
+    top: 9vh;
+  }
+  /* !!! resize stuff !!! */
+  .about {
+    font-size: 150%;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+  .profile-pic {
+    margin-right: 0;
+  }
+  .about h2 {
+    margin-top: 4vh;
+  }
+}
