@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2e2e2e" />
+
     <title>mychro</title>
+
+    <!-- search engine optimization meta tags -->
+    <meta name="description" content="Axel Ramadhan, computer science student." />
+    <meta name="author" content="Axel" />
+
+    <!-- open graph tags -->
+    <meta property="og:title" content="mychro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/favicon.png" />
+    <meta property="og:description" content="Axel Ramadhan, computer science student." />
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,72 +25,86 @@
       rel="stylesheet"
     />
 
-    <!-- font awesome -->
+    <!-- font (but actually icon) awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
     <!-- well it better be just my style -->
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- favicon -->
-    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" sizes="32x32" />
   </head>
 
   <body>
-    <!-- navigate -->
+    <!-- navigator? -->
     <nav class="navigator">
       <div class="navigator-logo">
-        <a style="--glow: #ed2100">A</a>
-        <a style="--glow: #0bda51">x</a>
-        <a style="--glow: #007fff">e</a>
-        <a style="--glow: #ffce1b">l</a>
+        <a href="#home" style="--glow: #ed2100">A</a>
+        <a href="#home" style="--glow: #0bda51">x</a>
+        <a href="#home" style="--glow: #007fff">e</a>
+        <a href="#home" style="--glow: #ffce1b">l</a>
       </div>
 
       <div class="navigator-nav">
-        <a href="#home"><i class="fas fa-house"></i>home</a>
-        <a href="#projects" id="projects"><i class="fas fa-code"></i>workshop</a>
-        <a href="#writings" id="writings"><i class="fas fa-pen"></i>writings</a>
+        <a href="#home" id="main" aria-label="home"><i class="fas fa-house"></i></a>
+        <a href="#projects" id="workshop" aria-label="projects"><i class="fas fa-code"></i></a>
+        <a href="#writings" id="blog" aria-label="writings"><i class="fas fa-pen"></i></a>
       </div>
 
       <div class="navigator-ex">
-        <a href="#" id="menu">menu</a>
-        <!-- Example social icons
-        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://discord.com/users/yourid" target="_blank"><i class="fab fa-discord"></i></a> -->
+        <button id="menu" aria-controls="nav" aria-expanded="false">menu</button>
       </div>
     </nav>
-    <!-- navigated -->
+    <!-- navigator! -->
 
-    <!-- mychro box -->
-    <section class="mychro">
-      <main class="content">
-        <h1>my<span>chro</span><em>!</em></h1>
-        <p>
-          it is an acronym for <span>My Chemical Romance</span>, my favourite artist.
-          <a href="https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb" target="_blank" class="mcr"><i class="fab fa-spotify"></i></a>
-        </p>
-      </main>
-    </section>
-    <!-- mychro box -->
+    <header>
+      <!-- the mychro box? -->
+      <section class="mychro">
+        <main class="content">
+          <h1>my<span>chro</span><em>!</em></h1>
+          <p>
+            it is an acronym for <span>My Chemical Romance</span>, my favourite artist.
+            <a href="https://open.spotify.com/artist/7FBcuc1gsnv6Y1nwFtNRCb" target="_blank" class="mcr"><i class="fab fa-spotify"></i></a>
+          </p>
+        </main>
+      </section>
+      <!-- the mychro box! -->
+    </header>
 
-    <!-- simple divider bar -->
+    <!-- literally just a divider bar -->
     <div class="divider"></div>
 
-    <!-- about -->
-    <section id="about" class="about">
-      <img src="https://avatars.githubusercontent.com/u/230283691" alt="" class="profile" />
-      <div>
-        <h2>about <span>me</span><em>!</em></h2>
-        <p>
-          my name's Axel, first-year student in computer science. not for a serious reason, i think the name itself is cool. not a weeb either, but you'll see
-          me play or talk about certain familiar
-          <span class="click-this" id="click-this">games</span>. i strive to be a frontend developer (subject to change)
-        </p>
-      </div>
-    </section>
-    <!-- about -->
+    <main>
+      <!-- about? -->
+      <section id="about" class="about">
+        <img src="./assets/favicon.png" alt="it's imathe!" class="profile" />
+        <div>
+          <h2>about <span>me</span><em>!</em></h2>
+          <p>
+            my name's Axel, first-year student in computer science. not for a serious reason, i think the name is really cool. you'll find me talk about or play
+            certain familiar
+            <span>games</span>.
+          </p>
+        </div>
+      </section>
+      <!-- about! -->
+    </main>
 
-    <!-- activate menu -->
+    <!-- footer? -->
+    <footer class="footer">
+      <p class="footer_text">2025 Axel</p>
+      <div class="footer_links">
+        <a href="https://github.com/axelmychro" target="_blank" class="footer_link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/axelmychro" target="_blank" class="footer_link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- footer ! -->
+
+    <!-- activate menu for mobile plebs -->
     <script src="./js/script.js"></script>
   </body>
 </html>

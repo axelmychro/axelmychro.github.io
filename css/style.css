@@ -19,10 +19,10 @@ body {
   color: var(--primary);
   max-width: 60%;
   margin: auto;
-  min-height: 2000px;
+  /* min-height: 2000px; */
 }
 
-/* navigator */
+/* navigator? */
 .navigator {
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ body {
 }
 
 /* Axel */
-.navigator .navigator-logo {
+.navigator-logo {
   font-family: "Major Mono Display", monospace;
   font-size: 2rem;
   font-weight: 800;
@@ -41,30 +41,30 @@ body {
   color: var(--primary);
 }
 
-/* .logo */
-.navigator .navigator-logo a {
+/* obnoxious glowing logo */
+.navigator-logo a {
   color: var(--primary);
   transition: all 0.5s ease;
   cursor: default;
 }
-.navigator .navigator-logo a:hover {
+.navigator-logo a:hover {
   color: var(--glow);
   text-shadow: 0 0 2px var(--glow), 0 0 4px var(--glow), 0 0 8px var(--glow);
 }
 
-/* menu at the center */
-.navigator .navigator-nav {
+/* buttons at the center (but forced to stay at the right side) */
+.navigator-nav {
   margin-left: auto;
 }
-.navigator .navigator-nav a {
+.navigator-nav a {
   color: var(--secondary);
-  display: inline;
+  display: inline-block;
   font-weight: 500;
   font-size: 1rem;
   padding: 4px;
 }
 /* if hovered with cursor */
-.navigator .navigator-nav a:hover {
+.navigator-nav a:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
@@ -73,20 +73,24 @@ body {
 .navigator-ex {
   background-color: var(--primary);
 }
-.navigator .navigator-ex a {
+.navigator-ex button {
+  background: none;
+  border: none;
   font-size: 2.4rem;
   font-weight: 400;
   color: var(--bg);
   padding: 0 8px;
+  cursor: pointer;
 }
-/* !! part of: mobile responsive hidden menu engineering  */
+/* !! part of: mobile responsive hidden menu */
 /* hide menu */
 #menu {
   display: none;
-  width: 14;
 }
+/* navigator! */
 
-/* mychro box*/
+/* mychro box? */
+/* yes, the black box i really love */
 .mychro {
   margin: 10vh 0 10vh;
   background-color: var(--primary);
@@ -118,42 +122,34 @@ body {
 .mychro .content .mcr {
   color: #1fd660;
 }
-/* mychro box */
+/* mychro box! */
 
-/* common divider bar */
+/* literally just a divider bar? */
 .divider {
   height: 4px;
   background-color: var(--subtle);
 }
-/* common divider bar */
+/* literally just divider bar! */
 
-/* about */
+/* about? */
 .about {
   display: flex;
   align-items: flex-start;
   margin: 10vh 0 10vh;
 }
 /* imathe */
-.container {
-  text-align: center;
-  background-color: white;
-  /* padding: 20px 10px 20px; */
-  /* border-radius: 10px; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-}
 .profile {
+  background-color: var(--primary);
+  padding: 0.4rem;
   width: 10em;
   height: 10em;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 2vw;
-  /* margin-bottom: 20px; */
 }
-/* imathe */
 .about h2 {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
-  margin: 0 0 1.2rem;
 }
 .about h2 span {
   color: var(--special);
@@ -164,9 +160,38 @@ body {
   line-height: 1.6;
   margin: 2rem 0 0;
 }
-/* about end */
+.about p span:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: default;
+}
+/* about! */
 
-/* !!! media queries !!! */
+/* footer? */
+.footer {
+  background-color: var(--primary);
+  margin: 2rem 0;
+  padding: 0.6rem;
+  color: var(--bg);
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_link {
+  margin: 0 0.5rem;
+  color: var(--bg);
+  transition: color 0.5s ease;
+}
+
+.footer_link:hover,
+.footer_link:focus {
+  color: var(--secondary);
+}
+/* footer! */
+
+/* !!! omg media queries !!! */
 /* laptop */
 @media (max-width: 1366px) {
   body {
@@ -181,17 +206,14 @@ body {
 }
 /* mobile */
 @media (max-width: 450px) {
-  html {
-    font-size: 60%;
-  }
   body {
     max-width: 90%;
   }
   #menu {
     display: inline-block;
   }
-  /* !!! mobile responsive hidden menu engineering !!! */
-  /* hide it to the right, off-screen */
+  /* !! mobile responsive hidden menu !! */
+  /* hide it at the top, off-screen */
   .navigator .navigator-nav {
     position: absolute;
     top: -4vh;
@@ -204,14 +226,13 @@ body {
   .navigator .navigator-nav.active {
     top: 9vh;
   }
-  /* !!! resize stuff !!! */
+  /* !!! move imathe above, resize stuff !!! */
   .about {
-    font-size: 150%;
     flex-direction: column;
     align-items: center;
     text-align: left;
   }
-  .profile-pic {
+  .profile {
     margin-right: 0;
   }
   .about h2 {
