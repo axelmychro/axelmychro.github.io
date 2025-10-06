@@ -27,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Major+Mono+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
 
@@ -53,21 +53,18 @@
     <!-- navigator? -->
     <nav class="navigator">
       <div class="navigator-logo">
-        <a href="#home" style="--glow: #ed2100">A</a>
-        <a href="#home" style="--glow: #0bda51">x</a>
-        <a href="#home" style="--glow: #007fff">e</a>
-        <a href="#home" style="--glow: #ffce1b">l</a>
+        <a href="#home">mychro</a>
       </div>
 
       <div class="navigator-nav">
         <a href="#home" id="main" aria-label="home"
-          ><i class="fas fa-house"></i
+          ><i class="fa-solid fa-house"></i
         ></a>
         <a href="#projects" id="workshop" aria-label="projects"
-          ><i class="fas fa-code"></i
+          ><i class="fa-solid fa-code"></i
         ></a>
-        <a href="#writings" id="blog" aria-label="writings"
-          ><i class="fas fa-pen"></i
+        <a href="#skills" id="stacks" aria-label="skills"
+          ><i class="fa-solid fa-cubes"></i
         ></a>
       </div>
 
@@ -81,23 +78,58 @@
 
     <header>
       <!-- the mychro box? -->
-      <section class="mychro">
-        <main class="content">
-          <h1>axel<span>ramadhan</span><em>,</em></h1>
+
+      <section class="about">
+        <div class="content-top">
+          <div class="content-left">
+            <img
+              src="./assets/favicon.png"
+              alt="imathe!"
+              class="profile-picture"
+            />
+          </div>
+          <main class="content-right">
+            <h2>hey there, my name is</h2>
+            <h1>axel <span>ramadhan</span> <em>!</em></h1>
+            <div class="content-links">
+              <a
+                href="mailto:maxelramadhan@gmail.com"
+                target="_blank"
+                class="content-link"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+              <a
+                href="https://linkedin.com/in/axelmychro"
+                target="_blank"
+                class="content-link"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a
+                href="https://github.com/axelmychro"
+                target="_blank"
+                class="content-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+          </main>
+        </div>
+        <div class="content-bottom">
           <p>
-            first-year <span>computer science student</span>, frontend developer
+            first-year computer science student at
+            <span>Universitas Sumatera Utara</span>, Indonesia. aspiring
+            frontend developer
           </p>
-        </main>
+        </div>
       </section>
       <!-- the mychro box! -->
     </header>
 
     <!-- literally just a divider bar -->
-    <div class="divider"></div>
+    <div class="bar"></div>
 
     <main>
-      <!-- about? -->
-      <section id="about" class="about">
+      <!-- main? -->
+      <!-- <section id="about" class="about">
         <img src="./assets/favicon.png" alt="it's imathe!" class="profile" />
         <div>
           <h2>about <span>me</span><em>!</em></h2>
@@ -108,8 +140,20 @@
             <span>games</span>.
           </p>
         </div>
+      </section> -->
+      <!-- main! -->
+
+      <!-- workshop? -->
+      <section id="projects" class="projects">
+        <h1>projects</h1>
       </section>
-      <!-- about! -->
+      <!-- workshop! -->
+
+      <!-- stacks? -->
+      <section id="skills" class="skills">
+        <h1>skills</h1>
+      </section>
+      <!-- stacks! -->
     </main>
 
     <!-- footer? -->
@@ -117,18 +161,24 @@
       <p class="footer_text">2025 Axel</p>
       <div class="footer_links">
         <a
-          href="https://github.com/axelmychro"
+          href="mailto:maxelramadhan@gmail.com"
           target="_blank"
           class="footer_link"
-        >
-          <i class="fab fa-github"></i>
-        </a>
+          ><i class="fa-solid fa-envelope"></i
+        ></a>
         <a
           href="https://linkedin.com/in/axelmychro"
           target="_blank"
           class="footer_link"
         >
           <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/axelmychro"
+          target="_blank"
+          class="footer_link"
+        >
+          <i class="fab fa-github"></i>
         </a>
       </div>
     </footer>

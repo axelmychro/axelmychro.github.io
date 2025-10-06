@@ -1,5 +1,9 @@
 :root {
+  --usu: #008000;
+  --usubright: #ccffcc;
   --special: #00aaff;
+  --purple: #b069db;
+  --purplebg: #3c0061;
   --primary: #2e2e2e;
   --secondary: #686c6f;
   --bg: #f2f2f4;
@@ -32,24 +36,18 @@ body {
   z-index: 999;
 }
 
-/* Axel */
+/* the alpha */
 .navigator-logo {
-  font-family: "Major Mono Display", monospace;
+  font-family: "Special Elite", monospace;
   font-size: 2rem;
   font-weight: 800;
   display: flex;
-  color: var(--primary);
 }
-
-/* obnoxious glowing logo */
 .navigator-logo a {
-  color: var(--primary);
-  transition: all 0.5s ease;
-  cursor: default;
+  color: var(--secondary);
 }
 .navigator-logo a:hover {
-  color: var(--glow);
-  text-shadow: 0 0 2px var(--glow), 0 0 4px var(--glow), 0 0 8px var(--glow);
+  color: var(--primary);
 }
 
 /* buttons at the center (but forced to stay at the right side) */
@@ -65,6 +63,7 @@ body {
 }
 /* if hovered with cursor */
 .navigator-nav a:hover {
+  color: var(--primary);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 2px;
@@ -90,80 +89,86 @@ body {
 /* navigator! */
 
 /* mychro box? */
-/* yes, the black box i really love */
-.mychro {
+.about {
   margin: 10vh 0 10vh;
-  background-color: var(--primary);
-  padding: 2rem 2rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.mychro .content {
+
+.content-top {
+  display: flex;
+  align-items: stretch;
+}
+
+.content-left {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.profile-picture {
+  display: block;
+  padding: 0.4rem;
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+}
+.content-right {
+  background-color: var(--purplebg);
+  padding: 2rem 1rem;
+  flex: 1;
   color: var(--bg);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.mychro .content h1 {
+.content-right h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.content-right h1 {
   font-family: "Fira Sans", sans-serif;
   font-size: 4em;
   color: var(--bg);
-  margin-bottom: 1.4rem;
 }
-.mychro .content h1 span {
-  color: var(--special);
+.content-right h1 span {
+  color: var(--purple);
 }
-.mychro .content p {
+.content-links a {
+  padding: 0 8px;
+  margin-right: auto;
+}
+.content-link {
+  font-size: 2rem;
+  color: var(--bg);
+}
+.content-bottom {
+  background-color: var(--primary);
+  padding: 2rem 2rem;
+  color: var(--bg);
+  text-align: left;
+}
+
+.content-bottom p {
   font-size: 1.6rem;
   line-height: 1.2;
   font-weight: 300;
 }
-.mychro .content p span {
-  color: var(--subtle);
-  font-weight: 700;
+
+.content-bottom p span {
+  color: var(--usubright);
+  font-weight: 500;
 }
 /* mychro box! */
 
 /* literally just a divider bar? */
-.divider {
+.bar {
   height: 4px;
   background-color: var(--subtle);
 }
 /* literally just divider bar! */
-
-/* about? */
-.about {
-  display: flex;
-  align-items: flex-start;
-  margin: 10vh 0 10vh;
-}
-/* imathe */
-.profile {
-  background-color: var(--primary);
-  padding: 0.4rem;
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 2vw;
-}
-.about h2 {
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 500;
-}
-.about h2 span {
-  color: var(--special);
-}
-.about p {
-  color: var(--secondary);
-  font-weight: 500;
-  line-height: 1.6;
-  margin: 2rem 0 0;
-}
-.about p span:hover {
-  color: var(--primary);
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  cursor: default;
-}
-/* about! */
 
 /* footer? */
 .footer {
@@ -224,15 +229,10 @@ body {
     top: 9vh;
   }
   /* !!! move imathe above, resize stuff !!! */
-  .about {
+  .mychro {
     flex-direction: column;
-    align-items: center;
-    text-align: left;
   }
-  .profile {
-    margin-right: 0;
-  }
-  .about h2 {
-    margin-top: 4vh;
+  .mychro .content h1 {
+    font-size: 2rem;
   }
 }
