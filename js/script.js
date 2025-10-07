@@ -1,3 +1,5 @@
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menu");
   const navigatorNav = document.querySelector(".navigator-nav");

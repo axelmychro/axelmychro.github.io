@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2e2e2e" />
-
     <title>mychro</title>
-
     <!-- search engine optimization meta tags -->
     <meta
       name="description"
       content="Axel Ramadhan, computer science student."
     />
     <meta name="author" content="Axel" />
-
     <!-- open graph tags -->
     <meta property="og:title" content="mychro" />
     <meta property="og:type" content="website" />
@@ -22,7 +19,6 @@
       property="og:description"
       content="Axel Ramadhan, computer science student."
     />
-
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,16 +26,13 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
-
     <!-- font (but actually icon) awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
     <!-- well it better be just my style -->
     <link rel="stylesheet" href="./css/style.css" />
-
     <!-- favicon -->
     <link
       rel="icon"
@@ -50,7 +43,7 @@
   </head>
 
   <body>
-    <!-- navigator? -->
+    <!-- navigator -->
     <nav class="navigator">
       <div class="navigator-logo">
         <a href="#home">mychro</a>
@@ -74,13 +67,13 @@
         </button>
       </div>
     </nav>
-    <!-- navigator! -->
 
     <header>
-      <!-- the mychro box? -->
-
+      <!-- the box -->
       <section class="about">
+        <h1 class="sneaky-titles">1 &bull; about</h1>
         <div class="content-top">
+          <!-- left and right is part of top -->
           <div class="content-left">
             <img
               src="./assets/favicon.png"
@@ -88,31 +81,26 @@
               class="profile-picture"
             />
           </div>
-          <main class="content-right">
-            <h2>hey there, my name is</h2>
-            <h1>axel <span>ramadhan</span> <em>!</em></h1>
-            <div class="content-links">
+          <div class="content-right">
+            <h3>hey there, my name is</h3>
+            <h2>axel ramadhan<em>!</em></h2>
+            <div class="content-right-links">
               <a
                 href="mailto:maxelramadhan@gmail.com"
                 target="_blank"
-                class="content-link"
+                class="content-right-link"
                 ><i class="fa-solid fa-envelope"></i
               ></a>
               <a
                 href="https://linkedin.com/in/axelmychro"
                 target="_blank"
-                class="content-link"
+                class="content-right-link"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
-              <a
-                href="https://github.com/axelmychro"
-                target="_blank"
-                class="content-link"
-                ><i class="fa-brands fa-github"></i
-              ></a>
             </div>
-          </main>
+          </div>
         </div>
+        <!-- while bottom is independent -->
         <div class="content-bottom">
           <p>
             first-year computer science student at
@@ -121,58 +109,74 @@
           </p>
         </div>
       </section>
-      <!-- the mychro box! -->
     </header>
 
-    <!-- literally just a divider bar -->
+    <!-- literally just a divider -->
     <div class="bar"></div>
 
     <main>
-      <!-- main? -->
-      <!-- <section id="about" class="about">
-        <img src="./assets/favicon.png" alt="it's imathe!" class="profile" />
-        <div>
-          <h2>about <span>me</span><em>!</em></h2>
-          <p>
-            my name's Axel, first-year student in computer science. not for a
-            serious reason, i think the name is really cool. you'll find me talk
-            about or play certain familiar
-            <span>games</span>.
-          </p>
-        </div>
-      </section> -->
-      <!-- main! -->
-
-      <!-- workshop? -->
+      <!-- workshop -->
       <section id="projects" class="projects">
-        <h1>projects</h1>
+        <h1 class="sneaky-titles">2 &bull; projects</h1>
+        <div class="project-previews">
+          <div class="project-preview">
+            <div class="ryoran">
+              <h2>ryoran, work in progress</h2>
+              <p>postponed until exams are finished</p>
+              <a
+                href="https://github.com/axelmychro/ryoran"
+                target="_blank"
+                class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <time datetime="2025-10-2">2025</time>
+            </div>
+          </div>
+          <div class="project-preview">
+            <div class="">
+              <h2>-</h2>
+              <p>-</p>
+              <a href="" target="_blank" class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <time datetime="">202X</time>
+            </div>
+          </div>
+          <div class="project-preview">
+            <div class="">
+              <h2>-</h2>
+              <p>-</p>
+              <a href="" target="_blank" class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <time datetime="">202X</time>
+            </div>
+          </div>
+          <div class="project-preview">
+            <div class="">
+              <h2>-</h2>
+              <p>-</p>
+              <a href="" target="_blank" class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <time datetime="">202X</time>
+            </div>
+          </div>
+        </div>
       </section>
-      <!-- workshop! -->
 
-      <!-- stacks? -->
+      <div class="bar"></div>
+
+      <!-- stacks -->
       <section id="skills" class="skills">
-        <h1>skills</h1>
+        <h1 class="sneaky-titles">3 &bull; skills</h1>
       </section>
-      <!-- stacks! -->
     </main>
 
     <!-- footer? -->
     <footer class="footer">
-      <p class="footer_text">2025 Axel</p>
+      <small class="footer_text"><span id="currentYear"></span> Axel</small>
       <div class="footer_links">
-        <a
-          href="mailto:maxelramadhan@gmail.com"
-          target="_blank"
-          class="footer_link"
-          ><i class="fa-solid fa-envelope"></i
-        ></a>
-        <a
-          href="https://linkedin.com/in/axelmychro"
-          target="_blank"
-          class="footer_link"
-        >
-          <i class="fab fa-linkedin"></i>
-        </a>
         <a
           href="https://github.com/axelmychro"
           target="_blank"
