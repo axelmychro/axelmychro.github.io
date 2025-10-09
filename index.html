@@ -43,6 +43,7 @@
   </head>
 
   <body>
+    <i class="fa-solid fa-gear" id="gear"></i>
     <!-- navigator -->
     <nav class="navigator">
       <div class="navigator-logo">
@@ -50,13 +51,13 @@
       </div>
 
       <div class="navigator-nav">
-        <a href="#home" id="main" aria-label="home"
-          ><i class="fa-solid fa-house"></i
-        ></a>
+        <a href="#about" id="main" aria-label="about"
+          ><i class="fa-solid fa-circle-info"></i>
+        </a>
         <a href="#projects" id="workshop" aria-label="projects"
           ><i class="fa-solid fa-code"></i
         ></a>
-        <a href="#skills" id="stacks" aria-label="skills"
+        <a href="#stacks" id="skills" aria-label="stacks"
           ><i class="fa-solid fa-cubes"></i
         ></a>
       </div>
@@ -120,49 +121,27 @@
         <h1 class="sneaky-titles">2 &bull; projects</h1>
         <div class="project-previews">
           <div class="project-preview">
-            <div class="">
-              <h2>-</h2>
-              <p>-</p>
-              <img src="" alt="" class="preview-image" />
-              <div class="preview-footer">
-                <time datetime="">202X</time>
-                <a href="" target="_blank" class="project-link"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-preview">
-            <div class="">
-              <h2>-</h2>
-              <p>-</p>
-              <img src="" alt="" class="preview-image" />
-              <div class="preview-footer">
-                <time datetime="">202X</time>
-                <a href="" target="_blank" class="project-link"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-preview">
-            <div class="wisoa">
+            <div class="preview-main">
               <h2>wisoa</h2>
               <p>discord bot i made (copy-pasted) for active developer badge</p>
-              <img src="" alt="" class="preview-image" />
-              <div class="preview-footer">
-                <time datetime="">2025</time>
-                <a
-                  href="https://github.com/axelmychro/wisoa"
-                  target="_blank"
-                  class="project-link"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-              </div>
+              <img
+                src="./assets/preview_wisoa.png"
+                alt=""
+                class="preview-image"
+              />
+            </div>
+            <div class="preview-footer">
+              <time datetime="2025-10-4">2025</time>
+              <a
+                href="https://github.com/axelmychro/wisoa"
+                target="_blank"
+                class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
           </div>
           <div class="project-preview">
-            <div class="ryoran">
+            <div class="preview-main">
               <h2>ryoran</h2>
               <p>wip and postponed until exams are finished</p>
               <img
@@ -170,15 +149,15 @@
                 alt="source: https://www.miyoushe.com/sr/article/58831790"
                 class="preview-image"
               />
-              <div class="preview-footer">
-                <time datetime="2025-10-2">2025</time>
-                <a
-                  href="https://github.com/axelmychro/ryoran"
-                  target="_blank"
-                  class="project-link"
-                  ><i class="fa-brands fa-github"></i
-                ></a>
-              </div>
+            </div>
+            <div class="preview-footer">
+              <time datetime="2025-10-2">2025</time>
+              <a
+                href="https://github.com/axelmychro/ryoran"
+                target="_blank"
+                class="project-link"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -187,12 +166,58 @@
       <div class="bar"></div>
 
       <!-- stacks -->
-      <section id="skills" class="skills">
-        <h1 class="sneaky-titles">3 &bull; skills</h1>
+      <section id="stacks" class="stacks">
+        <h1 class="sneaky-titles">3 &bull; stacks</h1>
+        <div class="skills">
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+            />
+          </div>
+          <div class="skill">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pnpm/pnpm-original.svg"
+            />
+          </div>
+        </div>
       </section>
     </main>
 
-    <!-- footer? -->
+    <div class="bar"></div>
+
+    <!-- q -->
+    <section class="quote">
+      <blockquote cite="Chester Bennington">
+        <p>And don't resent me.</p>
+      </blockquote>
+    </section>
+
+    <!-- footer -->
     <footer class="footer">
       <small class="footer_text"><span id="currentYear"></span> Axel</small>
       <div class="footer_links">
@@ -205,9 +230,7 @@
         </a>
       </div>
     </footer>
-    <!-- footer ! -->
 
-    <!-- activate menu for mobile plebs -->
     <script src="./js/script.js"></script>
   </body>
 </html>
