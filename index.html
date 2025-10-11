@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#2e2e2e" />
     <title>mychro</title>
-    <!-- search engine optimization meta tags -->
     <meta
       name="description"
       content="Axel Ramadhan, computer science student."
     />
     <meta name="author" content="Axel" />
-    <!-- open graph tags -->
     <meta property="og:title" content="mychro" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/favicon.png" />
@@ -19,21 +17,17 @@
       property="og:description"
       content="Axel Ramadhan, computer science student."
     />
-    <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap"
       rel="stylesheet"
     />
-    <!-- font (but actually icon) awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <!-- well it better be just my style -->
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- favicon -->
     <link
       rel="icon"
       href="./assets/favicon.png"
@@ -44,13 +38,12 @@
 
   <body>
     <i class="fa-solid fa-gear" id="gear"></i>
-    <!-- navigator -->
     <nav class="navigator">
       <div class="navigator-logo">
         <a href="#home">mychro</a>
       </div>
 
-      <div class="navigator-nav">
+      <div class="navigator-nav" id="main-nav">
         <a href="#about" id="main" aria-label="about"
           ><i class="fa-solid fa-circle-info"></i>
         </a>
@@ -63,45 +56,44 @@
       </div>
 
       <div class="navigator-ex">
-        <button id="menu" aria-controls="nav" aria-expanded="false">
+        <button id="menu" aria-controls="main-nav" aria-expanded="false">
           menu
         </button>
       </div>
     </nav>
 
     <header>
-      <!-- the box -->
       <section class="about">
-        <h1 class="sneaky-titles">1 &bull; about</h1>
-        <div class="content-top">
-          <!-- left and right is part of top -->
+        <h2 class="sneaky-titles">1 &bull; about</h2>
+        <div class="about-header">
           <div class="content-left">
             <img
               src="./assets/favicon.png"
-              alt="imathe!"
+              alt="profile picture"
               class="profile-picture"
             />
           </div>
           <div class="content-right">
             <h3>hey there, my name is</h3>
-            <h2>axel ramadhan<em>!</em></h2>
+            <h1>axel ramadhan<em>!</em></h1>
             <div class="content-right-links">
               <a
                 href="mailto:maxelramadhan@gmail.com"
                 target="_blank"
                 class="content-right-link"
+                aria-label="email me"
                 ><i class="fa-solid fa-envelope"></i
               ></a>
               <a
                 href="https://linkedin.com/in/axelmychro"
                 target="_blank"
                 class="content-right-link"
+                aria-label="visit my LinkedIn profile"
                 ><i class="fa-brands fa-linkedin"></i
               ></a>
             </div>
           </div>
         </div>
-        <!-- while bottom is independent -->
         <div class="content-bottom">
           <p>
             first-year computer science student at
@@ -112,23 +104,23 @@
       </section>
     </header>
 
-    <!-- literally just a divider -->
     <div class="bar"></div>
 
     <main>
-      <!-- workshop -->
       <section id="projects" class="projects">
-        <h1 class="sneaky-titles">2 &bull; projects</h1>
+        <h2 class="sneaky-titles">2 &bull; projects</h2>
         <div class="project-previews">
           <div class="project-preview">
             <div class="preview-main">
               <h2>wisoa</h2>
               <p>discord bot i made (copy-pasted) for active developer badge</p>
-              <img
-                src="./assets/preview_wisoa.png"
-                alt=""
-                class="preview-image"
-              />
+              <div class="image-wrapper">
+                <img
+                  src="./assets/preview_wisoa.webp"
+                  alt="preview of wisoa, the discord bot"
+                  class="preview-image"
+                />
+              </div>
             </div>
             <div class="preview-footer">
               <time datetime="2025-10-4">2025</time>
@@ -136,6 +128,7 @@
                 href="https://github.com/axelmychro/wisoa"
                 target="_blank"
                 class="project-link"
+                aria-label="view wisoa project on GitHub"
                 ><i class="fa-brands fa-github"></i
               ></a>
             </div>
@@ -144,11 +137,13 @@
             <div class="preview-main">
               <h2>ryoran</h2>
               <p>wip and postponed until exams are finished</p>
-              <img
-                src="./assets/preview_ryoran.jpg"
-                alt="source: https://www.miyoushe.com/sr/article/58831790"
-                class="preview-image"
-              />
+              <div class="image-wrapper">
+                <img
+                  src="./assets/preview_ryoran.webp"
+                  alt="preview of the ryoran rhythm game"
+                  class="preview-image"
+                />
+              </div>
             </div>
             <div class="preview-footer">
               <time datetime="2025-10-2">2025</time>
@@ -156,6 +151,7 @@
                 href="https://github.com/axelmychro/ryoran"
                 target="_blank"
                 class="project-link"
+                aria-label="view ryoran project on GitHub"
                 ><i class="fa-brands fa-github"></i
               ></a>
             </div>
@@ -165,43 +161,49 @@
 
       <div class="bar"></div>
 
-      <!-- stacks -->
       <section id="stacks" class="stacks">
-        <h1 class="sneaky-titles">3 &bull; stacks</h1>
+        <h2 class="sneaky-titles">3 &bull; stacks</h2>
         <div class="skills">
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+              alt="HTML5 icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+              alt="CSS3 icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+              alt="JavaScript icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+              alt="Git icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+              alt="Node.js icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+              alt="Docker icon"
             />
           </div>
           <div class="skill">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pnpm/pnpm-original.svg"
+              alt="pnpm icon"
             />
           </div>
         </div>
@@ -210,25 +212,22 @@
 
     <div class="bar"></div>
 
-    <!-- q -->
     <section class="quote">
-      <blockquote cite="Chester Bennington">
+      <blockquote>
         <p>And don't resent me.</p>
       </blockquote>
     </section>
 
-    <!-- footer -->
     <footer class="footer">
-      <small class="footer_text"><span id="currentYear"></span> Axel</small>
-      <div class="footer_links">
-        <a
-          href="https://github.com/axelmychro"
-          target="_blank"
-          class="footer_link"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
+      <small><span id="currentYear"></span> Axel</small>
+      <a
+        href="https://github.com/axelmychro"
+        target="_blank"
+        class="footer_link"
+        aria-label="visit my GitHub profile"
+      >
+        <i class="fab fa-github"></i>
+      </a>
     </footer>
 
     <script src="./js/script.js"></script>
