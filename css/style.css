@@ -138,7 +138,7 @@ body {
   object-fit: cover;
 }
 .content-right {
-  background-color: var(--purplebg);
+  background-color: var(--bg);
   padding: 2rem 1rem;
   flex: 1;
   color: var(--subtle);
@@ -147,14 +147,13 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.content-right a {
-  color: var(--purple);
+
+.content-right h1 {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
 }
-.content-right h3 {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--purple);
-}
+
 .content-right h2 {
   font-family: "Fira Sans", sans-serif;
   font-size: 4em;
