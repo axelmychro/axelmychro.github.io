@@ -3,20 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#2e2e2e" />
-    <title>mychro</title>
+    <meta name="theme-color" content="#b069db" />
+    <title>mychro!</title>
     <meta
       name="description"
-      content="Axel Ramadhan, computer science student."
+      content="axel ramadhan, computer science student at Universitas Sumatera Utara. aspiring fullstack developer"
     />
-    <meta name="author" content="Axel" />
-    <meta property="og:title" content="mychro" />
+    <meta
+      name="keywords"
+      content="axel ramadhan, web developer, fullstack developer, computer science, portfolio, Indonesia"
+    />
+    <meta name="author" content="axel ramadhan" />
+
+    <meta property="og:title" content="mychro!" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://axelmychro.github.io" />
     <meta property="og:image" content="./assets/favicon.png" />
     <meta
       property="og:description"
-      content="Axel Ramadhan, computer science student."
+      content="axel ramadhan, computer science student at Universitas Sumatera Utara. aspiring fullstack developer."
     />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="mychro | axel ramadhan" />
+    <meta
+      name="twitter:description"
+      content="computer science student & aspiring fullstack developer"
+    />
+    <meta name="twitter:image" content="./assets/favicon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -37,197 +52,240 @@
   </head>
 
   <body>
-    <i class="fa-solid fa-gear" id="gear"></i>
-    <nav class="navigator">
-      <div class="navigator-logo">
-        <a href="#home">mychro</a>
-      </div>
-
-      <div class="navigator-nav" id="main-nav">
-        <a href="#about" id="main" aria-label="about"
-          ><i class="fa-solid fa-circle-info"></i>
-        </a>
-        <a href="#projects" id="workshop" aria-label="projects"
-          ><i class="fa-solid fa-code"></i
-        ></a>
-        <a href="#stacks" id="skills" aria-label="stacks"
-          ><i class="fa-solid fa-cubes"></i
-        ></a>
-      </div>
-
-      <div class="navigator-ex">
-        <button id="menu" aria-controls="main-nav" aria-expanded="false">
-          menu
-        </button>
-      </div>
-    </nav>
-
     <header>
-      <section class="about">
-        <h2 class="sneaky-titles">1 &bull; about</h2>
+      <nav class="navigator" aria-label="main navigation">
+        <div class="navigator-logo">
+          <a href="#home">mychro</a>
+        </div>
+
+        <div class="navigator-nav" id="main-nav">
+          <a href="#about" aria-label="about section">
+            <i class="fa-solid fa-circle-info"></i>
+          </a>
+          <a href="#projects" aria-label="projects section">
+            <i class="fa-solid fa-code"></i>
+          </a>
+          <a href="#stacks" aria-label="tech stack section">
+            <i class="fa-solid fa-cubes"></i>
+          </a>
+          <button
+            class="lang-switch"
+            id="lang-switch"
+            aria-label="switch language"
+          >
+            en
+          </button>
+        </div>
+
+        <div class="navigator-ex">
+          <button
+            id="menu"
+            aria-controls="main-nav"
+            aria-expanded="false"
+            aria-label="Toggle menu"
+          >
+            menu
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="about" class="about">
+        <h2 class="sneaky-titles" data-i18n="about_0">1 &bull; about</h2>
         <div class="about-header">
           <div class="content-left">
             <img
               src="./assets/favicon.png"
-              alt="profile picture"
+              alt="imathe"
               class="profile-picture"
             />
           </div>
           <div class="content-right">
-            <h1>hey there, my name is</h1>
-            <h2>axel ramadhan<em>!</em></h2>
+            <h1 data-i18n="about_1">
+              hey there, my name is<br /><span>axel ramadhan<em>!</em></span>
+            </h1>
+            <hr aria-hidden="true" />
             <div class="content-right-links">
               <a
                 href="mailto:maxelramadhan@gmail.com"
-                target="_blank"
                 class="content-right-link"
                 aria-label="email me"
-                ><i class="fa-solid fa-envelope"></i
-              ></a>
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
               <a
                 href="https://linkedin.com/in/axelmychro"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="content-right-link"
                 aria-label="visit my LinkedIn profile"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
+              >
+                <i class="fa-brands fa-linkedin" style="color: #0077b5"></i>
+              </a>
             </div>
           </div>
         </div>
         <div class="content-bottom">
-          <p>
-            first-year computer science student at
-            <span>Universitas Sumatera Utara</span>, Indonesia. aspiring
+          <p data-i18n="about_2">
+            first-year computer science student in
+            <span>Universitas Sumatera Utara</span>, Indonesia.<br />aspiring
             fullstack developer
           </p>
         </div>
       </section>
-    </header>
 
-    <div class="bar"></div>
+      <hr aria-hidden="true" />
 
-    <main>
       <section id="projects" class="projects">
         <h2 class="sneaky-titles">2 &bull; projects</h2>
         <div class="project-previews">
-          <div class="project-preview">
+          <article class="project-preview">
             <div class="preview-main">
-              <h2>wisoa</h2>
-              <p>discord bot i made (copy-pasted) for active developer badge</p>
+              <h3>wisoa</h3>
+              <p data-i18n="projects_1">
+                Discord bot i made (copypasted) for
+                <span class="inline-icon">
+                  active developer badge
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Discord_Active_Developer_Badge.svg"
+                    alt="Discord active developer badge"
+                    class="badge-icon"
+                  />
+                </span>
+              </p>
+
               <div class="image-wrapper">
                 <img
                   src="./assets/preview_wisoa.webp"
-                  alt="preview of wisoa, the discord bot"
+                  alt="preview of wisoa Discord bot"
                   class="preview-image"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div class="preview-footer">
-              <time datetime="2025-10-4">2025</time>
+              <time datetime="2025">2025</time>
               <a
                 href="https://github.com/axelmychro/wisoa"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="project-link"
-                aria-label="view wisoa project on GitHub"
-                ><i class="fa-brands fa-github"></i
-              ></a>
+                aria-label="view wisoa on GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
             </div>
-          </div>
-          <div class="project-preview">
+          </article>
+
+          <article class="project-preview">
             <div class="preview-main">
-              <h2>ryoran</h2>
-              <p>wip and postponed until exams are finished</p>
+              <h3>ryoran</h3>
+              <p data-i18n="projects_2">
+                wip rhythm game in making using merely vanilla html, css, and js
+              </p>
               <div class="image-wrapper">
                 <img
                   src="./assets/preview_ryoran.webp"
-                  alt="preview of the ryoran rhythm game"
+                  alt="preview of ryoran rhythm game"
                   class="preview-image"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div class="preview-footer">
-              <time datetime="2025-10-2">2025</time>
+              <time datetime="2025">2025</time>
               <a
                 href="https://github.com/axelmychro/ryoran"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="project-link"
-                aria-label="view ryoran project on GitHub"
-                ><i class="fa-brands fa-github"></i
-              ></a>
+                aria-label="view ryoran on GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <div class="bar"></div>
+      <hr aria-hidden="true" />
 
       <section id="stacks" class="stacks">
         <h2 class="sneaky-titles">3 &bull; stacks</h2>
         <div class="skills">
-          <div class="skill">
+          <div class="skill" aria-label="HTML5">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt="HTML5 icon"
+              alt="HTML5"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="CSS3">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt="CSS3 icon"
+              alt="CSS3"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="JavaScript">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              alt="JavaScript icon"
+              alt="JavaScript"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="Git">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-              alt="Git icon"
+              alt="Git"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="Node.js">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-              alt="Node.js icon"
+              alt="Node.js"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="Docker">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-              alt="Docker icon"
+              alt="Docker"
             />
           </div>
-          <div class="skill">
+          <div class="skill" aria-label="pnpm">
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pnpm/pnpm-original.svg"
-              alt="pnpm icon"
+              alt="pnpm"
             />
           </div>
         </div>
       </section>
+
+      <hr aria-hidden="true" />
+
+      <section class="quote">
+        <blockquote>
+          <p>And don't resent me.</p>
+        </blockquote>
+      </section>
     </main>
 
-    <div class="bar"></div>
-
-    <section class="quote">
-      <blockquote>
-        <p>And don't resent me.</p>
-      </blockquote>
-    </section>
-
-    <footer class="footer">
-      <small><span id="currentYear"></span> Axel</small>
-      <a
-        href="https://github.com/axelmychro"
-        target="_blank"
-        class="footer_link"
-        aria-label="visit my GitHub profile"
-      >
-        <i class="fab fa-github"></i>
-      </a>
+    <footer>
+      <div class="footer-left">
+        <time id="currentYear"></time> axel &bull; made with vanilla
+        <i class="fa-brands fa-html5" aria-hidden="true"></i>
+        <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+        <i class="fa-brands fa-js" aria-hidden="true"></i><em>!</em>
+      </div>
+      <div class="footer-right">
+        <a
+          href="https://github.com/axelmychro"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+          aria-label="visit my GitHub profile"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </footer>
 
     <script src="./js/script.js"></script>
