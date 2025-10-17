@@ -18,7 +18,7 @@
     <meta property="og:title" content="mychro!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://axelmychro.github.io" />
-    <meta property="og:image" content="./assets/favicon.png" />
+    <meta property="og:image" content="./assets/images/imathe.webp" />
     <meta
       property="og:description"
       content="axel ramadhan, computer science student at Universitas Sumatera Utara. aspiring fullstack developer."
@@ -30,23 +30,14 @@
       name="twitter:description"
       content="computer science student & aspiring fullstack developer"
     />
-    <meta name="twitter:image" content="./assets/favicon.png" />
+    <meta name="twitter:image" content="./assets/images/imathe.webp" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Elite&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="icon"
-      href="./assets/favicon.png"
-      type="image/png"
+      href="./assets/favicon.ico"
+      type="image/ico"
       sizes="32x32"
     />
   </head>
@@ -92,11 +83,11 @@
 
     <main id="main-content">
       <section id="about" class="about">
-        <h2 class="sneaky-titles" data-i18n="about_0">1 &bull; about</h2>
+        <h2 class="sneaky-title" data-i18n="about_0">i &bull; about</h2>
         <div class="about-header">
           <div class="content-left">
             <img
-              src="./assets/favicon.png"
+              src="./assets/images/imathe.png"
               alt="imathe"
               class="profile-picture"
             />
@@ -138,29 +129,30 @@
       <hr aria-hidden="true" />
 
       <section id="projects" class="projects">
-        <h2 class="sneaky-titles">2 &bull; projects</h2>
+        <h2 class="sneaky-title">ii &bull; projects</h2>
         <div class="project-previews">
           <article class="project-preview">
             <div class="preview-main">
               <h3>wisoa</h3>
-              <p data-i18n="projects_1">
-                Discord bot i made (copypasted) for
-                <span class="inline-icon">
-                  active developer badge
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Discord_Active_Developer_Badge.svg"
-                    alt="Discord active developer badge"
-                    class="badge-icon"
-                  />
-                </span>
+              <p>
+                <span data-i18n="projects_1">
+                  Discord bot i made (copypasted) for active developer
+                  badge</span
+                >
+                <img
+                  src="./assets/icons/Discord_Active_Developer_Badge.svg"
+                  alt="Discord active developer badge"
+                  class="inline-badge"
+                />
               </p>
 
-              <div class="image-wrapper">
+              <div class="prewiew-wrapper">
                 <img
-                  src="./assets/preview_wisoa.webp"
+                  src="./assets/images/preview_wisoa.webp"
                   alt="preview of wisoa Discord bot"
                   class="preview-image"
                   loading="lazy"
+                  onerror="this.onerror=null; this.src='./assets/images/imathe.webp';"
                 />
               </div>
             </div>
@@ -184,12 +176,13 @@
               <p data-i18n="projects_2">
                 wip rhythm game in making using merely vanilla html, css, and js
               </p>
-              <div class="image-wrapper">
+              <div class="prewiew-image-wrapper">
                 <img
-                  src="./assets/preview_ryoran.webp"
+                  src="./assets/images/preview_ryoran.webp"
                   alt="preview of ryoran rhythm game"
                   class="preview-image"
                   loading="lazy"
+                  onerror="this.onerror=null; this.src='./assets/images/imathe.webp';"
                 />
               </div>
             </div>
@@ -212,49 +205,31 @@
       <hr aria-hidden="true" />
 
       <section id="stacks" class="stacks">
-        <h2 class="sneaky-titles">3 &bull; stacks</h2>
+        <h2 class="sneaky-title">iii &bull; stacks</h2>
         <div class="skills">
           <div class="skill" aria-label="HTML5">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              alt="HTML5"
-            />
+            <img src="./assets/icons/html5-original.svg" alt="HTML5" />
           </div>
           <div class="skill" aria-label="CSS3">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              alt="CSS3"
-            />
+            <img src="./assets/icons/css3-original.svg" alt="CSS3" />
           </div>
           <div class="skill" aria-label="JavaScript">
             <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+              src="./assets/icons/javascript-original.svg"
               alt="JavaScript"
             />
           </div>
           <div class="skill" aria-label="Git">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-              alt="Git"
-            />
+            <img src="./assets/icons/git-original.svg" alt="Git" />
           </div>
           <div class="skill" aria-label="Node.js">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-              alt="Node.js"
-            />
+            <img src="./assets/icons/nodejs-original.svg" alt="Node.js" />
           </div>
           <div class="skill" aria-label="Docker">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-              alt="Docker"
-            />
+            <img src="./assets/icons/docker-original.svg" alt="Docker" />
           </div>
           <div class="skill" aria-label="pnpm">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pnpm/pnpm-original.svg"
-              alt="pnpm"
-            />
+            <img src="./assets/icons/pnpm-original.svg" alt="pnpm" />
           </div>
         </div>
       </section>
@@ -262,7 +237,31 @@
       <hr aria-hidden="true" />
 
       <section class="journey">
-        <h2 class="sneaky-titles">4 &bull; journey</h2>
+        <h2 class="sneaky-title" data-i18n="journey_0">iv &bull; journey</h2>
+
+        <div class="timeline">
+          <div class="tl-left">
+            <h3>25-08</h3>
+          </div>
+          <div class="tl-middle"></div>
+          <div class="tl-right">
+            <img
+              src="./assets/images/timeline_0.webp"
+              alt="Universitas Sumatera Utara"
+            />
+            <h4 data-i18n="journey_1">started my first year in CS</h4>
+          </div>
+
+          <div class="tl-left"><h3>25-10</h3></div>
+          <div class="tl-middle"></div>
+          <div class="tl-right">
+            <img
+              src="./assets/icons/Discord_Active_Developer_Badge.svg"
+              alt=""
+            />
+            <h4 data-i18n="journey_2">we'll see</h4>
+          </div>
+        </div>
       </section>
 
       <hr aria-hidden="true" />
@@ -275,12 +274,7 @@
     </main>
 
     <footer>
-      <div class="footer-left">
-        <time id="currentYear"></time> axel &bull; made with vanilla
-        <i class="fa-brands fa-html5" aria-hidden="true"></i>
-        <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
-        <i class="fa-brands fa-js" aria-hidden="true"></i><em>!</em>
-      </div>
+      <div class="footer-left"><time id="currentYear"></time>&bull;axel</div>
       <div class="footer-right">
         <a
           href="https://github.com/axelmychro"

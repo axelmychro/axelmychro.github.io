@@ -3,13 +3,76 @@
   --usubright: #ccffcc;
   --special: #00aaff;
   --purple: #b069db;
-  --purplebg: #3c0061;
+  --purplesub: #3c0061;
   --primary: #2e2e2e;
+  --primarysub: #3e3e3e;
   --secondary: #686c6f;
   --bg: #f2f2f4;
-  --subtle: #d5d5d5;
+  --bgsub: #d5d5d5;
   --black: #000;
 }
+
+@font-face {
+  font-display: swap;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/fira-code-v27-latin-300.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/fira-code-v27-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/fira-code-v27-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/fira-sans-v18-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../assets/fonts/fira-sans-v18-latin-italic.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/fira-sans-v18-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("../assets/fonts/fira-sans-v18-latin-500italic.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Special Elite";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/special-elite-v20-latin-regular.woff2")
+    format("woff2");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +101,7 @@ body {
   z-index: 999;
 }
 .navigator-logo {
-  font-family: "Special Elite", monospace;
+  font-family: "Special Elite", papyrus;
   font-size: 3rem;
   display: flex;
 }
@@ -102,11 +165,13 @@ body {
   display: none;
 }
 
-.sneaky-titles {
+.sneaky-title {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--subtle);
+  font-family: "Fira Sans", monospace;
+  color: var(--bgsub);
   margin: 0 0 1vh;
+  cursor: default;
 }
 
 .about {
@@ -127,7 +192,6 @@ body {
   padding: 1rem;
 }
 .profile-picture {
-  display: block;
   padding: 0.4rem;
   width: 10rem;
   height: 10rem;
@@ -136,10 +200,10 @@ body {
 
 .content-right {
   display: flex;
-  background-color: var(--purplebg);
+  background-color: var(--purplesub);
   padding: 2rem 1rem;
   flex: 1;
-  color: var(--subtle);
+  color: var(--bgsub);
   text-align: left;
   flex-direction: column;
   justify-content: center;
@@ -155,7 +219,7 @@ body {
 }
 hr {
   height: 4px;
-  background-color: var(--subtle);
+  background-color: var(--bgsub);
   width: 50%;
   margin: 10vh auto;
 }
@@ -167,7 +231,7 @@ hr {
 }
 .content-right-link {
   font-size: 2rem;
-  color: var(--subtle);
+  color: var(--bgsub);
 }
 .content-right-links a {
   margin: 0 8px;
@@ -192,7 +256,6 @@ hr {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
-
 .project-preview {
   display: flex;
   flex-direction: column;
@@ -200,11 +263,6 @@ hr {
   height: 100%;
   width: 100%;
   transition: transform 0.5s ease;
-}
-
-.project-preview:hover,
-.project-preview:focus-within {
-  transform: translateY(-4px);
 }
 
 .preview-main {
@@ -215,54 +273,48 @@ hr {
   overflow: hidden;
   flex: 1;
 }
-
 .preview-main h3 {
+  font-family: "Fira Sans", sans-serif;
   font-weight: 500;
+  font-size: 2rem;
 }
-
 .preview-main p {
+  background-color: var(--primarysub);
   font-weight: 300;
-}
-
-.inline-icon {
-  display: inline-flex;
+  font-size: 1.2rem;
+  flex: 1;
+  padding: 0.4rem;
+  margin: 0.4rem 0;
   align-items: center;
-  gap: 4px;
+  gap: 0.3rem;
 }
-
-.badge-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
+.inline-badge {
   display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  object-fit: contain;
 }
 
 .preview-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4/3;
   object-fit: cover;
   object-position: 50% 20%;
   transition: transform 0.5s ease;
 }
 
 .preview-image:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
-.image-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 75%;
+.prewview-image-wrapper {
   overflow: hidden;
-  margin-top: auto;
 }
 
 .preview-footer,
 .preview-footer a {
-  background-color: var(--purplebg);
+  background-color: var(--purplesub);
   padding: 4px;
   color: var(--bg);
   display: flex;
@@ -289,7 +341,6 @@ hr {
 .skill img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: contain;
   transition: transform 0.5s ease;
 }
@@ -297,10 +348,67 @@ hr {
   transform: scale(1.2);
 }
 
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+  position: relative;
+}
+
+.tl-left,
+.tl-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0rem;
+  z-index: 1;
+}
+
+.tl-left {
+  justify-content: flex-end;
+  text-align: center;
+  margin: 1rem;
+}
+.tl-left h3 {
+  background-color: var(--primary);
+  color: var(--bg);
+  justify-content: center;
+  text-align: center;
+  padding: 0 4px;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.tl-middle {
+  background-color: var(--primarysub);
+  width: 4px;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.tl-right {
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: -1.1rem;
+}
+.tl-right img {
+  width: 32px;
+  background-color: var(--bg);
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: cover;
+}
+.tl-right h4 {
+  border-left: 2px solid var(--bgsub);
+  padding-left: 4px;
+  color: var(--primary);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
 .quote {
   margin: 10vh 0;
   text-align: center;
-  color: var(--subtle);
+  color: var(--bgsub);
 }
 
 footer {
@@ -312,14 +420,20 @@ footer {
   background-color: var(--primary);
   display: flex;
   flex: 1;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--bg);
   padding: 0.8rem;
   align-items: center;
-  gap: 2px;
+  /* gap: 8px; */
+}
+.footer-left span {
+  display: inline-flex;
+  justify-content: start;
+  gap: 0;
+  align-items: center;
 }
 .footer-right {
-  border: 2px solid var(--purplebg);
+  border: 2px solid var(--purplesub);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,7 +441,7 @@ footer {
 }
 .footer-link {
   display: flex;
-  background-color: var(--purplebg);
+  background-color: var(--purplesub);
   font-size: 2rem;
   color: var(--bg);
   padding: 0.4rem;
@@ -341,7 +455,7 @@ footer {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--bg);
-  color: var(--purplebg);
+  color: var(--purplesub);
 }
 
 @media (max-width: 1366px) {
