@@ -1,1 +1,3 @@
-i could've done better it looks so bad
+# hey there!
+
+## this is my first website

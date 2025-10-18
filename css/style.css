@@ -88,8 +88,13 @@ body {
   font-family: "Fira Code", monospace;
   background-color: var(--bg);
   color: var(--primary);
-  max-width: 60%;
   margin: auto;
+}
+.vw {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow-x: hidden;
 }
 
 .navigator {
@@ -98,7 +103,6 @@ body {
   align-items: center;
   padding: 2vh 0;
   position: relative;
-  z-index: 999;
 }
 .navigator-logo {
   font-family: "Special Elite", papyrus;
@@ -107,11 +111,12 @@ body {
 }
 .navigator-logo a {
   color: var(--secondary);
-  transition: color 0.5s ease;
+  transition: color 3s ease-in;
 }
+
 .navigator-logo a:hover,
 .navigator-logo a:focus {
-  color: var(--primary);
+  color: red;
 }
 
 .navigator-nav {
@@ -142,6 +147,7 @@ body {
   background-color: var(--primary);
   color: var(--bg);
   text-transform: uppercase;
+  cursor: pointer;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 .lang-switch:hover,
@@ -195,7 +201,7 @@ body {
   padding: 0.4rem;
   width: 10rem;
   height: 10rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .content-right {
@@ -308,7 +314,7 @@ hr {
   transform: scale(1.02);
 }
 
-.prewview-image-wrapper {
+.preview-wrapper {
   overflow: hidden;
 }
 
@@ -323,6 +329,9 @@ hr {
 }
 
 .skills {
+  background-color: var(--bgsub);
+  padding: 1rem;
+  margin: 0 12rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +360,6 @@ hr {
 .timeline {
   display: grid;
   grid-template-columns: 1fr 4px 1fr;
-  position: relative;
 }
 
 .tl-left,
@@ -366,7 +374,7 @@ hr {
 .tl-left {
   justify-content: flex-end;
   text-align: center;
-  margin: 1rem;
+  margin: 0 2.4rem;
 }
 .tl-left h3 {
   background-color: var(--primary);
@@ -374,32 +382,44 @@ hr {
   justify-content: center;
   text-align: center;
   padding: 0 4px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1rem;
 }
 
 .tl-middle {
-  background-color: var(--primarysub);
+  background-color: var(--primary);
   width: 4px;
   height: 100%;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .tl-right {
   justify-content: flex-start;
   text-align: left;
-  margin-left: -1.1rem;
+  margin-left: -2.1rem;
 }
-.tl-right img {
-  width: 32px;
+.tl-icon {
   background-color: var(--bg);
   border-radius: 50%;
-  border: 4px solid var(--primary);
-  object-fit: cover;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tl-right img {
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+.tl-right img:hover {
+  transform: scale(1.2);
 }
 .tl-right h4 {
-  border-left: 2px solid var(--bgsub);
-  padding-left: 4px;
+  border-left: 2px solid var(--primarysub);
+  padding-left: 6px;
   color: var(--primary);
   font-weight: 400;
   font-size: 1rem;
@@ -458,15 +478,8 @@ footer {
   color: var(--purplesub);
 }
 
-@media (max-width: 1366px) {
-  body {
-    max-width: 80%;
-  }
-}
+/* @media (max-width: 1366px) {} */
 @media (max-width: 768px) {
-  body {
-    max-width: 85%;
-  }
   .navigator-nav a,
   .navigator-nav button {
     padding: 0;
@@ -475,6 +488,7 @@ footer {
   .about-header {
     flex-direction: column;
   }
+
   .content-right {
     text-align: center;
     align-items: center;
@@ -493,22 +507,23 @@ footer {
   .project-previews {
     grid-template-columns: 1fr;
   }
+
+  .skills {
+    padding: 1rem;
+    margin: 0 0;
+  }
 }
 
 @media (max-width: 450px) {
-  body {
-    max-width: 90%;
-  }
   #menu {
     display: inline-block;
   }
-
   .navigator-nav {
     position: absolute;
     right: 0;
     top: 10vh;
     transform: translateX(200%);
-    transition: transform 0.5s;
+    transition: transform 0.5s ease;
   }
   .navigator-nav.active {
     transform: translateX(0);
