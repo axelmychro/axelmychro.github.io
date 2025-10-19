@@ -1,15 +1,17 @@
 :root {
-  --usu: #008000;
-  --usubright: #ccffcc;
+  --usu: #3ab93a;
   --special: #00aaff;
-  --purple: #b069db;
-  --purplesub: #3c0061;
+  --purplesub: #9d00ff;
+  --purple: #3c0061;
   --primary: #2e2e2e;
   --primarysub: #3e3e3e;
   --secondary: #686c6f;
   --bg: #f2f2f4;
   --bgsub: #d5d5d5;
   --black: #000;
+  --white: #fff;
+  --hl: #569cd6;
+  --hlsub: #dcdcaa;
 }
 
 @font-face {
@@ -32,6 +34,13 @@
   font-style: normal;
   font-weight: 500;
   src: url("../assets/fonts/fira-code-v27-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/fira-code-v27-latin-700.woff2") format("woff2");
 }
 
 @font-face {
@@ -97,32 +106,32 @@ body {
   overflow-x: hidden;
 }
 
-.navigator {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2vh 0;
   position: relative;
 }
-.navigator-logo {
+.nav-logo {
   font-family: "Special Elite", papyrus;
   font-size: 3rem;
   display: flex;
 }
-.navigator-logo a {
+.nav-logo a {
   color: var(--secondary);
-  transition: color 3s ease-in;
+  transition: color 0.5s ease;
 }
 
-.navigator-logo a:hover,
-.navigator-logo a:focus {
-  color: red;
+.nav-logo a:hover,
+.nav-logo a:focus {
+  color: var(--primary);
 }
 
-.navigator-nav {
+.nav-menu {
   margin-left: auto;
 }
-.navigator-nav a {
+.nav-menu a {
   color: var(--secondary);
   display: inline-block;
   font-size: 2rem;
@@ -132,10 +141,10 @@ body {
   font-family: inherit;
   cursor: pointer;
 }
-.navigator-nav a:hover,
-.navigator-nav a:focus,
-.navigator-nav button:hover,
-.navigator-nav button:focus {
+.nav-menu a:hover,
+.nav-menu a:focus,
+.nav-menu button:hover,
+.nav-menu button:focus {
   color: var(--primary);
 }
 
@@ -144,6 +153,7 @@ body {
   font-size: 2rem;
   padding: 0 8px;
   border: 2px solid var(--primary);
+  border-radius: 2px;
   background-color: var(--primary);
   color: var(--bg);
   text-transform: uppercase;
@@ -156,10 +166,10 @@ body {
   color: var(--primary);
 }
 
-.navigator-ex {
+.nav-ex {
   background-color: var(--primary);
 }
-.navigator-ex button {
+.nav-ex button {
   background: none;
   font-size: 2rem;
   color: var(--bg);
@@ -180,48 +190,55 @@ body {
   cursor: default;
 }
 
-.about {
+.hero {
   margin: 16vh 0 0;
   display: flex;
   flex-direction: column;
 }
-.about-header {
+.hero-header {
   display: flex;
   align-items: stretch;
 }
 
-.content-left {
+.hero-picture {
   background-color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.6rem;
 }
-.profile-picture {
+.hero-picture img {
   padding: 0.4rem;
   width: 10rem;
   height: 10rem;
   object-fit: contain;
 }
 
-.content-right {
+.hero-right {
   display: flex;
-  background-color: var(--purplesub);
-  padding: 2rem 1rem;
+  background-color: var(--purple);
+  padding: 2rem 1rem 1rem;
   flex: 1;
   color: var(--bgsub);
   text-align: left;
   flex-direction: column;
   justify-content: center;
 }
-.content-right h1 {
+.hero-right h1 {
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 300;
 }
-.content-right h1 span {
+.hero-right h1 span {
+  font-weight: 400;
   color: var(--bg);
   font-family: "Fira Sans", sans-serif;
   font-size: 3.4rem;
+}
+.hero-right h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--purplesub);
+  text-transform: uppercase;
 }
 hr {
   height: 4px;
@@ -229,31 +246,47 @@ hr {
   width: 50%;
   margin: 10vh auto;
 }
-.content-right hr {
+.hero-right hr {
   height: 2px;
-  background-color: var(--purple);
+  background-color: var(--purplesub);
   width: 75%;
+  min-width: 16rem;
+  max-width: 80%;
   margin: 1vh 0;
 }
-.content-right-link {
-  font-size: 2rem;
-  color: var(--bgsub);
+.hero-right-links {
+  display: flex;
+  gap: 1rem;
 }
-.content-right-links a {
-  margin: 0 8px;
+.hero-right-link {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+}
+.hero-right-link a {
+  color: var(--bgsub);
+  font-size: 2.2rem;
+  margin-top: 4px;
+  transition: transform 0.5s ease;
+}
+.hero-right-link a:hover {
+  transform: scale(1.1);
 }
 
-.content-bottom {
+.hero-content {
   display: flex;
   background-color: var(--primary);
   padding: 2rem 2rem;
   color: var(--bg);
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.2;
-  font-weight: 500;
+  font-weight: 400;
 }
-.content-bottom p span {
-  color: var(--usubright);
+.hero-content p span {
+  color: var(--usu);
   font-weight: 500;
 }
 
@@ -318,43 +351,73 @@ hr {
   overflow: hidden;
 }
 
-.preview-footer,
-.preview-footer a {
-  background-color: var(--purplesub);
-  padding: 4px;
+.preview-footer {
+  background-color: var(--purple);
+  padding: 0 0 0 0.4rem;
   color: var(--bg);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
+.preview-footer time {
+  flex: 1;
+  font-size: 1rem;
+}
+.pftss {
+  display: flex;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+.pfts {
+  display: flex;
+  padding: 4px;
+}
+.pfts img {
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  object-fit: contain;
+}
+.pfts img:hover {
+  transform: scale(1.2);
+}
+.preview-footer a {
+  display: flex;
+  background-color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 2px;
+  color: var(--white);
+  font-size: 2rem;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.preview-footer a:hover {
+  background-color: var(--white);
+  color: var(--black);
 }
 
-.skills {
+.about-content {
+  /* background-color: var(--primary); */
+  /* padding: 0.2rem 0; */
+  justify-content: center;
+  align-items: center;
+}
+.about-content p {
   background-color: var(--bgsub);
-  padding: 1rem;
-  margin: 0 12rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+  color: var(--primary);
+  padding: 0.4rem;
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
 }
-.skill {
-  background-color: var(--primary);
-  padding: 0.8rem;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.skill img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-.skill img:hover {
-  transform: scale(1.2);
+
+.about-content span {
+  color: var(--usu);
 }
 
 .timeline {
@@ -401,7 +464,7 @@ hr {
 .tl-icon {
   background-color: var(--bg);
   border-radius: 50%;
-  padding: 8px 0;
+  padding: 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -414,8 +477,11 @@ hr {
   object-fit: contain;
   transition: transform 0.5s ease;
 }
+#tlib {
+  margin: 8px 0;
+}
 .tl-right img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .tl-right h4 {
   border-left: 2px solid var(--primarysub);
@@ -453,7 +519,7 @@ footer {
   align-items: center;
 }
 .footer-right {
-  border: 2px solid var(--purplesub);
+  border: 2px solid var(--purple);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -461,7 +527,7 @@ footer {
 }
 .footer-link {
   display: flex;
-  background-color: var(--purplesub);
+  background-color: var(--purple);
   font-size: 2rem;
   color: var(--bg);
   padding: 0.4rem;
@@ -475,32 +541,32 @@ footer {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--bg);
-  color: var(--purplesub);
+  color: var(--purple);
 }
 
 /* @media (max-width: 1366px) {} */
 @media (max-width: 768px) {
-  .navigator-nav a,
-  .navigator-nav button {
+  .nav-menu a,
+  .nav-menu button {
     padding: 0;
   }
 
-  .about-header {
+  .hero-header {
     flex-direction: column;
   }
 
-  .content-right {
+  .hero-right {
     text-align: center;
     align-items: center;
   }
-  .content-right h1 {
+  .hero-right h1 {
     font-size: 1.2rem;
   }
-  .content-right h1 span {
+  .hero-right h1 span {
     font-size: 2.6rem;
   }
 
-  .content-bottom p {
+  .hero-content p {
     font-size: 1.4rem;
   }
 
@@ -518,14 +584,14 @@ footer {
   #menu {
     display: inline-block;
   }
-  .navigator-nav {
+  .nav-menu {
     position: absolute;
     right: 0;
     top: 10vh;
     transform: translateX(200%);
     transition: transform 0.5s ease;
   }
-  .navigator-nav.active {
+  .nav-menu.active {
     transform: translateX(0);
   }
 }

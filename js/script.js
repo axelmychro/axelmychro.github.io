@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // cache DOM queries
   const menuBtn = document.getElementById("menu");
-  const navigatorNav = document.querySelector(".navigator-nav");
+  const navMenu = document.querySelector(".nav-menu");
   const langSwitch = document.getElementById("lang-switch");
   const yearElement = document.getElementById("currentYear");
 
@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // menu toggle handler
   const toggleMenu = (show) => {
     const isActive =
-      show !== undefined ? show : !navigatorNav.classList.contains("active");
-    navigatorNav.classList.toggle("active", isActive);
+      show !== undefined ? show : !navMenu.classList.contains("active");
+    navMenu.classList.toggle("active", isActive);
     menuBtn.setAttribute("aria-expanded", isActive);
   };
 
@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // outside click close menu
   document.addEventListener("click", (e) => {
-    if (!menuBtn.contains(e.target) && !navigatorNav.contains(e.target)) {
+    if (!menuBtn.contains(e.target) && !navMenu.contains(e.target)) {
       toggleMenu(false);
     }
   });
 
   // esc close menu
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && navigatorNav.classList.contains("active")) {
+    if (e.key === "Escape" && navMenu.classList.contains("active")) {
       toggleMenu(false);
       menuBtn.focus();
     }
