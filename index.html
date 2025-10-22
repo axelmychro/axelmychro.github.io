@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#b069db" />
     <title>mychro!</title>
     <meta
@@ -43,7 +46,8 @@
   </head>
 
   <body>
-    <div class="vw">
+    <div id="vw">
+      <a href="#main" id="skip-link">skip to main content</a>
       <header>
         <nav class="nav" aria-label="main navigation">
           <div class="nav-logo">
@@ -51,19 +55,20 @@
           </div>
 
           <div id="main-nav" class="nav-menu">
-            <a href="#about" aria-label="about section">
-              <i class="fa-solid fa-circle-info"></i>
-            </a>
             <a href="#projects" aria-label="projects section">
               <i class="fa-solid fa-code"></i>
             </a>
-            <a href="#stacks" aria-label="tech stack section">
-              <i class="fa-solid fa-cubes"></i>
+            <a href="#about" aria-label="about section">
+              <i class="fa-solid fa-circle-info"></i>
+            </a>
+            <a href="#journey" aria-label="journey section">
+              <i class="fa-solid fa-sailboat"></i>
             </a>
             <button
               id="lang-switch"
               class="lang-switch"
-              aria-label="switch language"
+              aria-label="switch language (currently: English)"
+              aria-live="polite"
             >
               en
             </button>
@@ -80,17 +85,16 @@
             </button>
           </div>
         </nav>
-      </header>
 
-      <main>
         <section id="hero" class="hero">
-          <h1 class="sneaky-title" data-i18n="hero_0">1 &bull; welcome!</h1>
+          <h2 class="the-title" data-i18n="hero_0">1 &bull; welcome!</h2>
           <div class="hero-header">
             <div class="hero-picture">
               <img
-                src="./assets/images/imathe.png"
-                onerror="this.onerror=null; this.src='./assets/images/imathe.webp';"
+                src="./assets/images/imathe_t10t.webp"
                 alt="imathe"
+                loading="eager"
+                onerror="this.onerror=null; this.src='./assets/images/imathe.webp';"
               />
             </div>
             <div class="hero-right">
@@ -100,45 +104,55 @@
               <h2>web developer</h2>
               <hr aria-hidden="true" />
               <div class="hero-right-links">
-                <div class="hero-right-link">
-                  <a
-                    href="mailto:maxelramadhan@gmail.com"
-                    aria-label="email me"
-                  >
-                    <i class="fa-solid fa-envelope"></i>
-                  </a>
-                </div>
-                <div class="hero-right-link">
-                  <a
-                    href="https://linkedin.com/in/axelmychro"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="visit my LinkedIn profile"
-                  >
-                    <i class="fa-brands fa-linkedin" style="color: #0077b5"></i>
-                  </a>
-                </div>
-                <div class="right-hero-link"><a href=""></a></div>
+                <a
+                  id="hrl-mail"
+                  href="mailto:maxelramadhan@gmail.com"
+                  aria-label="send me an email"
+                  class="hero-right-link"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a
+                  id="hrl-linkedin"
+                  href="https://linkedin.com/in/axelmychro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="visit my LinkedIn profile"
+                  class="hero-right-link"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  id="hrl-github"
+                  href="https://github.com/axelmychro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="visit my GitHub profile"
+                  class="hero-right-link"
+                >
+                  <i class="fab fa-github"></i
+                ></a>
               </div>
             </div>
           </div>
           <div class="hero-content">
             <p data-i18n="hero_2">
-              computer science student at
-              <span>Universitas Sumatera Utara</span>, Indonesia. frontend
-              developer, aspiring fullstack developer
+              computer science student at Universitas Sumatera Utara, Indonesia.
+              frontend developer, aspiring fullstack developer
             </p>
           </div>
         </section>
+      </header>
 
+      <main id="main">
         <hr aria-hidden="true" />
 
         <section id="projects" class="projects">
-          <h1 class="sneaky-title">2 &bull; projects</h1>
+          <h2 class="the-title">2 &bull; projects</h2>
           <div class="project-previews">
             <article class="project-preview">
               <div class="preview-main">
-                <h3>wisoa</h3>
+                <h2>Priestess</h2>
                 <p>
                   <span data-i18n="projects_1">
                     Discord bot i made for active developer badge</span
@@ -153,7 +167,7 @@
                 <div class="preview-wrapper">
                   <img
                     src="./assets/images/preview_1.webp"
-                    alt="preview of wisoa Discord bot"
+                    alt="preview of Priestess Discord bot"
                     class="preview-image"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='./assets/images/imathe.webp';"
@@ -161,7 +175,7 @@
                 </div>
               </div>
               <div class="preview-footer">
-                <time datetime="2025-10-4">2025</time>
+                <time datetime="2025-10-04">2025</time>
                 <div class="pftss">
                   <div class="pfts" aria-label="JavaScript">
                     <img
@@ -186,11 +200,11 @@
                   </div>
                 </div>
                 <a
-                  href="https://github.com/axelmychro/wisoa"
+                  href="https://github.com/axelmychro/priestess"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="project-link"
-                  aria-label="view wisoa on GitHub"
+                  aria-label="view Priestess, Discord bot on GitHub"
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
@@ -199,7 +213,7 @@
 
             <article class="project-preview">
               <div class="preview-main">
-                <h3>ryoran</h3>
+                <h2>ryoran</h2>
                 <p data-i18n="projects_2">
                   wip web rhythm game, currently mapping the first track
                 </p>
@@ -234,7 +248,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="project-link"
-                  aria-label="view ryoran on GitHub"
+                  aria-label="view ryoran, rhythm game on GitHub"
                 >
                   <i class="fa-brands fa-github"></i>
                 </a>
@@ -246,7 +260,7 @@
         <hr aria-hidden="true" />
 
         <section id="about" class="about">
-          <h1 class="sneaky-title" data-i18n="about_0">3 &bull; about</h1>
+          <h2 class="the-title" data-i18n="about_0">3 &bull; about</h2>
           <div class="about-content">
             <p data-i18n="about_1">
               hello, person across this screen! my name's Axel Ramadhan, also
@@ -257,17 +271,16 @@
               learn.
             </p>
             <p data-i18n="about_3">
-              currently studying computer science in
-              <span>Universitas Sumatera Utara</span>, striving to become a
-              fullstack developer!
+              currently studying computer science in Universitas Sumatera Utara,
+              striving to become a fullstack developer!
             </p>
           </div>
         </section>
 
         <hr aria-hidden="true" />
 
-        <section class="journey">
-          <h1 class="sneaky-title" data-i18n="journey_0">4 &bull; journey</h1>
+        <section id="journey" class="journey">
+          <h2 class="the-title" data-i18n="journey_0">4 &bull; journey</h2>
           <div class="timeline">
             <div class="tl-left">
               <h3>25-08</h3>
@@ -287,7 +300,10 @@
             <div class="tl-middle"></div>
             <div class="tl-right">
               <div class="tl-icon">
-                <img src="./assets/images/timeline_1.webp" alt="" />
+                <img
+                  src="./assets/images/timeline_1.webp"
+                  alt="Google Developer Group on Campus"
+                />
               </div>
               <h4 data-i18n="journey_2">selected by GDGoC USU as a member</h4>
             </div>
@@ -295,13 +311,11 @@
         </section>
 
         <hr aria-hidden="true" />
-
-        <section class="quote">
-          <blockquote>
-            <p>and i am still learning!</p>
-          </blockquote>
-        </section>
       </main>
+
+      <blockquote id="quote">
+        <p>and i am still learning!</p>
+      </blockquote>
 
       <footer>
         <div class="footer-left">
