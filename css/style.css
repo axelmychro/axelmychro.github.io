@@ -247,6 +247,7 @@ body {
   text-transform: uppercase;
 }
 hr {
+  border: none;
   height: 4px;
   background-color: var(--bgsub);
   width: 50%;
