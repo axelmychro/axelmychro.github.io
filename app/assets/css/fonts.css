@@ -1,0 +1,35 @@
+@font-face {
+  font-display: swap;
+  font-family: "Zain";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/zain-v4-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Playpen Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/playpen-sans-v22-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/oswald-v57-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/oswald-v57-latin-500.woff2") format("woff2");
+}
+
+@theme {
+  --font-zain: "Zain", sans-serif;
+  --font-playpen-sans: "Playpen Sans", handwriting;
+  --font-oswald: "Oswald", sans-serif;
+}
