@@ -1,5 +1,5 @@
 <template>
   <div
-    class="fixed right-0 top-0 border-l w-12 h-screen"
+    class="fixed right-12 top-0 bg-gray-100 w-px h-screen z-10"
   ></div>
 </template>

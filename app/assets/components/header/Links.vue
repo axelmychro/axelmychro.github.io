@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-black/50 lg:bg-transparent absolute inset-0 p-8 pt-24 lg:p-0 lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 flex flex-col lg:flex-row w-screen lg:w-fit h-screen lg:h-fit lg:gap-2"
+    class="bg-black/50 lg:bg-transparent absolute top-0 left-256 p-8 pt-24 lg:p-0 lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 flex flex-col lg:flex-row w-screen lg:w-fit h-screen lg:h-fit lg:gap-2"
   >
     <a
       href="#"

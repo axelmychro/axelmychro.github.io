@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.css", "devicon/devicon.min.css"],
 
   vite: {
     plugins: [tailwindcss()],
