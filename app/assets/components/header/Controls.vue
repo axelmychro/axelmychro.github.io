@@ -14,7 +14,7 @@
     </button>
     <button
       type="button"
-      class="focus:text-sky-300 transition-colors duration-300 text-gray-600"
+      class="focus:text-gray-300 transition-colors duration-300 text-gray-600"
     >
       <lucide-headphone-off class="w-8 h-8" />
     </button>

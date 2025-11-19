@@ -1,25 +1,41 @@
 <template>
-  <div class="fixed left-0 top-0 w-full h-16 border-b hidden"></div>
+  <div class="fixed left-0 top-0 w-full h-16 border-b border-gray-600"></div>
+
   <div
-    class="fixed right-0 bottom-0 w-12 lg:w-32 h-screen border-l border-gray-600 z-10 flex items-center justify-center"
+    class="fixed right-0 bottom-0 w-12 lg:w-32 h-screen border-l border-gray-600"
   ></div>
+
   <div
-    class="fixed right-1 bottom-17 flex flex-row overflow-hidden w-32 h-32 items-end justify-end lg:right-0 lg:bottom-16 lg:items-center lg:justify-center"
+    class="fixed right-0 bottom-0 w-12 h-screen flex items-end justify-center lg:w-32 lg:items-center"
   >
-    <p
-      class="font-oswald text-4xl text-fuchsia-300 relative -bottom-2 flex flex-row items-center justify-center"
+    <div
+      class="relative flex flex-col w-full h-32 items-center justify-start bottom-16"
     >
-      00
-      <span
-        class="absolute bottom-8 right-0 -rotate-90 text-gray-100 text-xs lg:rotate-none lg:static lg:bottom-10"
-        >/05</span
+      <div
+        class="relative flex flex-col overflow-hidden w-full h-full items-center justify-end inset-0 z-10"
       >
-      <span
-        class="absolute bottom-10 right-0 -rotate-90 text-gray-100 text-xs font-zain w-full uppercase lg:rotate-none lg:-bottom-4"
-        >homepageee</span
+        <p
+          class="absolute font-oswald text-4xl -bottom-4 text-fuchsia-300 flex items-start justify-start"
+        >
+          00<span
+            class="absolute -rotate-90 text-xs bottom-9 -right-1 text-gray-100 font-fira-code lg:static lg:rotate-none lg:mt-1"
+            >/05</span
+          >
+        </p>
+      </div>
+      <p
+        class="absolute bottom-7 rotate-90 text-sm font-oswald uppercase lg:rotate-none lg:-bottom-5 lg:right-3"
       >
-    </p>
+        homepage
+      </p>
+      <p
+        class="absolute bottom-9 rotate-90 right-4 font-zain text-xs lg:rotate-none lg:-bottom-2 lg:right-3"
+      >
+        mychro
+      </p>
+    </div>
   </div>
+
   <div
     class="fixed right-0 bottom-0 flex w-full h-16 border-t border-gray-600"
   ></div>
