@@ -37,5 +37,20 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/scripts",
     "nuxt-lucide-icons",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    defaultLocale: "en",
+    locales: [
+      {
+        code: "en",
+        file: "en.json",
+      },
+      {
+        code: "id",
+        file: "id.json",
+      },
+    ],
+    langDir: "locales/",
+  },
 });
