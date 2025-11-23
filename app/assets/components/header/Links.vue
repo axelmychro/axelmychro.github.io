@@ -1,27 +1,74 @@
+<script setup lang="ts">
+const linkItems = [
+  { label: "index", icon: "lucide-house", href: "#" },
+  { label: "projects", icon: "lucide-code", href: "#projects" },
+  { label: "about", icon: "lucide-info", href: "#about" },
+  { label: "timeline", icon: "lucide-map", href: "#timeline" },
+  { label: "contact", icon: "lucide-user", href: "#contact" },
+];
+
+const showLinks = useState("showLinks");
+
+function closeLinks() {
+  showLinks.value = false;
+}
+</script>
+
 <template>
-  <div
-    class="bg-black/50 lg:bg-transparent w-full h-full fixed lg:static inset-0 pl-2 pr-14 pt-16 flex lg:p-0 z-50"
+  <Transition
+    enter-active-class="transition-opacity duration-300"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-active-class="transition-opacity duration-300"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
   >
     <div
-      class="flex flex-col lg:flex-row lg:items-center justify-start lg:justify-end w-screen lg:w-full h-screen lg:h-full lg:gap-2 lg:px-2"
+      v-show="showLinks"
+      @click="closeLinks"
+      class="bg-black/50 lg:bg-transparent w-full h-full fixed lg:static inset-0 pl-2 pr-14 pt-16 flex lg:p-0 z-50"
     >
-      <a href="#" class="each-link each-link-lg each-link-hoverfocus"
-        ><lucide-house class="link-icon" /> {{ $t("index") }}</a
+      <TransitionGroup
+        @click.stop
+        tag="div"
+        enter-active-class="transition-all duration-500 ease-out"
+        enter-from-class="opacity-0 translate-x-full"
+        enter-to-class="opacity-100 translate-x-0"
+        leave-active-class="transition-all duration-300 ease-in"
+        leave-from-class="opacity-100 translate-x-0"
+        leave-to-class="opacity-0 translate-x-full"
+        move-class="transition-all duration-500"
+        class="flex flex-col lg:flex-row lg:items-center justify-start lg:justify-end w-screen lg:w-full h-screen lg:h-full lg:gap-2 lg:px-2"
       >
-      <a href="#projects" class="each-link each-link-lg each-link-hoverfocus"
-        ><lucide-code class="link-icon" />{{ $t("projects") }}</a
-      >
-      <a href="#about" class="each-link each-link-lg each-link-hoverfocus"
-        ><lucide-info class="link-icon" />{{ $t("about") }}</a
-      >
-      <a href="#timeline" class="each-link each-link-lg each-link-hoverfocus"
-        ><lucide-map class="link-icon" />{{ $t("timeline") }}</a
-      >
-      <a href="#contact" class="each-link each-link-lg each-link-hoverfocus"
-        ><lucide-user class="link-icon" />{{ $t("contact") }}</a
-      >
+        <a
+          v-for="item in linkItems"
+          :key="item.label"
+          :href="item.href"
+          @click="closeLinks"
+          class="each-link each-link-lg each-link-hoverfocus"
+        >
+          <lucide-house v-if="item.icon === 'lucide-house'" class="link-icon" />
+          <lucide-code
+            v-else-if="item.icon === 'lucide-code'"
+            class="link-icon"
+          />
+          <lucide-info
+            v-else-if="item.icon === 'lucide-info'"
+            class="link-icon"
+          />
+          <lucide-map
+            v-else-if="item.icon === 'lucide-map'"
+            class="link-icon"
+          />
+          <lucide-user
+            v-else-if="item.icon === 'lucide-user'"
+            class="link-icon"
+          />
+          {{ $t(item.label) }}
+        </a>
+      </TransitionGroup>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <style scoped>

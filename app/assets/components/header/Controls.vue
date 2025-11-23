@@ -10,7 +10,7 @@ function toggleLocale() {
 }
 
 function toggleTheme() {
-  setltheme.value === "dark" ? "light" : "dark";
+  theme.value = theme.value === "dark" ? "light" : "dark";
 }
 
 function toggleSound() {
@@ -33,7 +33,8 @@ function toggleSound() {
 
     <button @click="toggleTheme" type="button" class="animate text-gray-300">
       <lucide-moon v-if="theme === 'dark'" class="each-icon-size" />
-      <lucide-sun v-else class="each-icon-size" />
+      <lucide-sun v-else-if="theme === 'light'" class="each-icon-size" />
+      <lucide-fan v-else class="each-icon-size" />
     </button>
 
     <button

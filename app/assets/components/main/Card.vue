@@ -22,7 +22,7 @@
         <h2
           class="text-3xl sm:text-4xl text-purple-300 font-oswald uppercase text-center md:text-start"
         >
-          Web Developer
+          Junior Web Developer
         </h2>
         <hr class="my-2" />
         <div

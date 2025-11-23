@@ -1,10 +1,13 @@
 <template>
-  <div class="fixed left-0 top-0 w-full h-16 border-b border-gray-600"></div>
+  <!-- top -->
+  <div class="fixed left-0 top-0 w-screen h-16 border-b border-gray-600"></div>
 
+  <!-- mid -->
   <div
     class="fixed right-0 bottom-0 w-12 lg:w-32 h-screen border-l border-gray-600"
   ></div>
 
+  <!-- mid page name n count -->
   <div
     class="fixed right-0 bottom-0 w-12 h-screen flex items-end justify-center lg:w-32 lg:items-center"
   >
@@ -36,7 +39,42 @@
     </div>
   </div>
 
+  <!-- mid projects -->
   <div
-    class="fixed right-0 bottom-0 flex w-full h-16 border-t border-gray-600"
+    class="fixed left-0 top-16 w-12 lg:w-32 h-screen flex items-start justify-center overflow-hidden"
+  >
+    <div
+      class="relative -left-1 top-15 lg:top-42 flex w-full h-full items-start justify-center"
+    >
+      <p
+        class="absolute text-5xl lg:text-9xl font-oswald uppercase -rotate-90 text-gray-900 bg-blue-600 fade-mask p-2"
+      >
+        projects
+      </p>
+    </div>
+  </div>
+
+  <!-- bot -->
+  <div
+    class="fixed right-0 bottom-0 flex w-screen h-16 border-t border-gray-600"
   ></div>
 </template>
+
+<style scoped>
+.fade-mask {
+  mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    black 0%,
+    black 60%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    black 0%,
+    black 60%,
+    transparent 100%
+  );
+}
+</style>
