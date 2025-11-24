@@ -6,6 +6,6 @@ import Projects from "./main/Projects.vue";
 
 <template>
   <Overlay />
-  <!-- <Hero /> -->
+  <Hero />
   <Projects />
 </template>

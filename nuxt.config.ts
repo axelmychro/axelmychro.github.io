@@ -4,9 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
 
   ssr: true,
+
+  devtools: { enabled: true },
 
   app: {
     head: {
@@ -26,19 +27,16 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css", "devicon/devicon.min.css"],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
-
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/hints",
     "@nuxt/image",
     "@nuxt/scripts",
-    "nuxt-lucide-icons",
     "@nuxtjs/i18n",
+    "nuxt-lucide-icons",
   ],
+
   i18n: {
     defaultLocale: "en",
     locales: [
@@ -52,5 +50,9 @@ export default defineNuxtConfig({
       },
     ],
     langDir: "locales/",
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

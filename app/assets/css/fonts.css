@@ -36,9 +36,26 @@
   src: url("../fonts/fira-code-v27-latin-regular.woff2") format("woff2");
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "Google Sans Flex";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/google-sans-flex-v15-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Google Sans Code";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/google-sans-code-v14-latin-regular.woff2") format("woff2");
+}
+
 @theme {
   --font-zain: "Zain", sans-serif;
   --font-playpen-sans: "Playpen Sans", handwriting;
   --font-oswald: "Oswald", sans-serif;
   --font-fira-code: "Fira Code", monospace;
+  --font-google-sans-flex: "Google Sans Flex", sans-serif;
+  --font-google-sans-code: "Google Sans Code", monospace;
 }

@@ -53,7 +53,7 @@
     </div>
     <div class="flex flex-col lg:flex-row items-stretch justify-center">
       <div
-        class="flex items-center w-full justify-center bg-neutral-800 p-2 py-4 lg:rounded-bl-sm"
+        class="flex items-center w-full justify-center bg-neutral-800 p-2 py-4 lg:rounded-bl-sm shrink"
       >
         <p
           class="text-xl font-fira-code sm:text-2xl text-neutral-100 text-center md:text-start"
