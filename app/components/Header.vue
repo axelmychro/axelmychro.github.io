@@ -3,7 +3,7 @@ import Navigation from "./header/Navigation.vue";
 </script>
 
 <template>
-  <header>
+  <header class="fixed left-0 top-0 w-full h-16 backdrop-blur-xs z-10">
     <Navigation />
   </header>
 </template>

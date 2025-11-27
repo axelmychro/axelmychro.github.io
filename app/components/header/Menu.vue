@@ -10,7 +10,7 @@ function toggleLinks() {
   <button
     @click="toggleLinks"
     type="button"
-    class="lg:hidden flex items-center justify-center z-50"
+    class="lg:hidden flex items-center justify-center z-50 cursor-pointer"
   >
     <lucide-menu class="size-8" />
   </button>

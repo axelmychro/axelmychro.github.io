@@ -23,7 +23,7 @@ function handleBackdropClick() {
     <div
       @click="handleBackdropClick"
       v-show="showLinks"
-      class="bg-black/50 lg:bg-transparent w-full h-full fixed lg:static inset-0 pl-2 pr-14 pt-16 flex lg:p-0 z-50"
+      class="bg-black/50 lg:bg-transparent w-full h-screen lg:h-full absolute lg:static inset-0 pl-2 pr-14 pt-16 flex lg:p-0 z-50"
     >
       <LinkItems />
     </div>

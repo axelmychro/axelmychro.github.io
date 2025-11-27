@@ -53,10 +53,10 @@ function toggleSound() {
 @import "~/assets/css/main.css";
 
 .each-icon-size {
-  @apply w-8 h-8;
+  @apply size-8;
 }
 
 .animate {
-  @apply transition-all duration-300 active:scale-80;
+  @apply transition-all duration-300 active:scale-80 cursor-pointer;
 }
 </style>
