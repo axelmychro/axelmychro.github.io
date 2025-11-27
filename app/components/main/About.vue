@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import Section from '../Section.vue';
+import Section from "../Section.vue";
 </script>
 
 <template>
-  <Section>
-    
-  </Section>
+  <Section id="about"> </Section>
 </template>
 
 <style scoped></style>

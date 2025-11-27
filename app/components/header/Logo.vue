@@ -12,7 +12,7 @@ const logoFocused = ref(false);
     @focus="logoFocused = true"
     @blur="logoFocused = false"
     href="#"
-    class="flex flex-row items-center gap-2"
+    class="flex flex-row items-center gap-2 select-none"
   >
     <img
       ref="logoImage"

@@ -4,7 +4,7 @@ import Credits from "./footer/Credits.vue";
 
 <template>
   <footer
-    class="fixed right-0 bottom-0 flex flex-row gap-8 items-center justify-between p-2 w-full h-16 backdrop-blur-xs z-10"
+    class="fixed right-0 bottom-0 flex flex-row gap-8 items-center justify-between p-2 w-full h-16 backdrop-blur-xs z-10 pointer-events-none select-none"
   >
     <Credits />
   </footer>

@@ -67,7 +67,9 @@ const projectFocused = ref(false);
               class="size-8 transition-colors duration-700 text-sky-300 group-hover:text-sky-500 group-focus:text-sky-500"
             />
           </a>
-          <div class="flex items-center justify-center w-full h-full">
+          <div
+            class="flex items-center justify-center w-full h-full select-none"
+          >
             <a
               href="https://github.com/axelmychro"
               target="_blank"

@@ -19,7 +19,9 @@ function toggleSound() {
 </script>
 
 <template>
-  <div class="flex flex-row gap-2 items-center justify-end px-4 lg:p-0">
+  <div
+    class="flex flex-row gap-2 items-center justify-end px-4 lg:p-0 select-none"
+  >
     <button
       @click="toggleLocale"
       type="button"

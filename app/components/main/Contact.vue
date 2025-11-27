@@ -1,13 +1,9 @@
-<template>
-  <div>
-    
-  </div>
-</template>
-
 <script lang="ts" setup>
-
+import Section from "../Section.vue";
 </script>
 
-<style>
+<template>
+  <Section id="contact"> </Section>
+</template>
 
-</style>
+<style scoped></style>
