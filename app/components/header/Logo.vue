@@ -1,32 +1,16 @@
-<script setup>
-import { ref } from "vue";
-const logoHovered = ref(false);
-const logoFocused = ref(false);
-</script>
-
 <template>
   <a
     tabindex="0"
-    @mouseover="logoHovered = true"
-    @mouseleave="logoHovered = false"
-    @focus="logoFocused = true"
-    @blur="logoFocused = false"
     href="#"
-    class="flex flex-row items-center gap-2 select-none"
+    class="logo-link flex flex-row items-center gap-2 select-none group"
   >
     <img
-      ref="logoImage"
       src="~/assets/images/imathe.webp"
       alt="Logo"
-      class="aspect-square w-12 h-12 object-cover border-2 border-fuchsia-300 rounded-full transition duration-500"
-      :class="
-        logoHovered || logoFocused
-          ? 'opacity-100 scale-100'
-          : 'opacity-0 scale-0'
-      "
-    /><span
-      class="font-zain text-4xl text-sky-300 transition duration-500"
-      :class="logoHovered || logoFocused ? 'translate-x-0' : '-translate-x-14'"
+      class="aspect-square size-12 object-cover bg-[#0f0f0f] border-2 border-fuchsia-300 rounded-full transition duration-500 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 group-focus:opacity-100 group-focus:scale-100"
+    />
+    <span
+      class="font-zain text-4xl text-sky-300 transition duration-500 -translate-x-14 group-hover:translate-x-0 group-focus:translate-x-0"
       >mychro!</span
     >
   </a>

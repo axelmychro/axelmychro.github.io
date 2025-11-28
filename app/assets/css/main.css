@@ -2,5 +2,5 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-gray-900 text-gray-100 font-google-sans-flex w-full h-full;
+  @apply relative bg-gray-900 text-gray-100 font-google-sans-flex w-full h-full;
 }
