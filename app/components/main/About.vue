@@ -4,41 +4,25 @@ import AboutLabel from "./AboutLabel.vue";
 </script>
 
 <template>
-  <Section id="about" bgColor="bg-gray-950">
-    <div class="flex flex-col h-full">
-      <div class="each-card">
-        <div class="ect-container">
-          <h2 class="text-sky-300 each-card-title">me</h2>
-        </div>
+  <Section id="about" bgColor="bg-neutral-950">
+    <div class="flex flex-col w-full h-full items-center justify-evenly">
+      <button type="button" class="each-card">
+        <h2 class="card-title">
+          <span class="inline-katakana">ワタシ</span> me
+        </h2>
+      </button>
 
-        <p class="each-card-content">
-          i'm Axel, a first-year computer science student with a
-          <span class="text-emerald-200">healthy</span>
-          obsession of websites. i learn by doing and ship whatever survives my
-          perfectionism.
-          <i class="devicon-vuejs-plain colored"
-            ><span class="font-google-sans-flex">Vue</span></i
-          >
-          and
-          <i class="devicon-nuxt-original colored"
-            ><span class="font-google-sans-flex">Nuxt</span></i
-          >
-          feel like home to me, so my experiments end up living there
-        </p>
-      </div>
+      <button type="button" class="each-card">
+        <h2 class="card-title">
+          <span class="inline-katakana">フィロソフィー</span> philosophy
+        </h2>
+      </button>
 
-      <div class="each-card">
-        <div class="ect-container">
-          <h2 class="text-fuchsia-300 each-card-title">philosophy</h2>
-        </div>
-
-        <p class="each-card-content">
-          follows a simple rule that modern doesn't have to mean soft. i like
-          clean layouts, minimal colors, and edges that stay sharp enough to
-          feel intentional. i adore interfaces that load fast, read clearly, and
-          feel honest about what they are
-        </p>
-      </div>
+      <button type="button" class="each-card">
+        <h2 class="card-title">
+          <span class="inline-katakana">スタイル</span> style
+        </h2>
+      </button>
     </div>
     <AboutLabel />
   </Section>
@@ -48,18 +32,12 @@ import AboutLabel from "./AboutLabel.vue";
 @import "~/assets/css/main.css";
 
 .each-card {
-  @apply h-full flex flex-row;
+  @apply border-b-2 border-neutral-600 w-xs h-fit cursor-pointer;
 }
-.ect-container {
-  @apply bg-gray-700 px-2 rounded-sm w-16 h-full shrink-0 flex items-center justify-center;
+.card-title {
+  @apply text-neutral-300 text-start text-2xl w-fit h-fit;
 }
-.each-card-title {
-  @apply text-2xl font-zain -rotate-90;
-}
-.each-card-content {
-  @apply text-lg text-gray-300 bg-gray-900 p-2 rounded-sm;
-}
-.ecc-inline-icon {
-  @apply flex;
+.inline-katakana {
+  @apply blur-[1px];
 }
 </style>
