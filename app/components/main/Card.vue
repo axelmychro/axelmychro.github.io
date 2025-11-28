@@ -6,7 +6,7 @@
       <img
         src="~/assets/images/imathe.webp"
         alt="imathe"
-        class="aspect-4/3 w-full h-full max-h-32 sm:max-h-40 md:aspect-3/4 md:max-w-50 md:max-h-max p-2 md:p-0 bg-gray-950 object-contain rounded-t-md md:rounded-tr-none"
+        class="aspect-4/3 w-full h-full max-h-32 sm:max-h-40 md:aspect-3/4 md:max-w-50 md:max-h-max p-2 md:p-0 bg-gray-950 object-contain rounded-t-md md:rounded-tr-none pointer-events-none select-none"
       />
       <div
         class="bg-purple-800 w-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"

@@ -4,6 +4,8 @@ import Card from "./Card.vue";
 </script>
 <template>
   <Section id="index">
-    <Card />
+    <div class="flex items-center justify-center w-full h-full">
+      <Card />
+    </div>
   </Section>
 </template>

@@ -18,13 +18,13 @@
 
         <div class="flex flex-col mt-5 items-end justify-center">
           <p
-            class="text-sm font-google-sans-code text-gray-300 absolute lg:static -rotate-90 lg:rotate-none left-5 bottom-5"
+            class="text-sm font-google-sans-code text-gray-300 absolute lg:static -rotate-90 lg:rotate-none left-5 bottom-5 leading-none"
           >
             <span class="text-transparent lg:text-gray-300">00</span>/05
           </p>
 
           <p
-            class="font-zain text-xs absolute lg:static rotate-90 lg:rotate-none right-4 top-6"
+            class="font-zain text-xs absolute lg:static rotate-90 lg:rotate-none right-5 top-5 leading-none"
           >
             mychro
           </p>
@@ -32,7 +32,7 @@
       </div>
 
       <p
-        class="font-oswald text-md uppercase absolute lg:static rotate-90 lg:rotate-none top-8 -left-2 lg:bottom-6"
+        class="font-oswald text-md uppercase absolute lg:static rotate-90 lg:rotate-none bottom-12 -left-2 lg:bottom-6 leading-none"
       >
         homepage
       </p>

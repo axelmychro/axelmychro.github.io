@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Section from "../Section.vue";
-import ProjectsTitle from "./ProjectsTitle.vue";
+import ProjectsLabel from "./ProjectsLabel.vue";
 
 const projects = [
   {
@@ -34,7 +34,7 @@ const projectFocused = ref(false);
       <div
         class="relative w-12 lg:w-32 h-full flex items-start justify-start overflow-hidden"
       >
-        <ProjectsTitle />
+        <ProjectsLabel />
       </div>
 
       <div class="flex flex-col w-full h-full">
