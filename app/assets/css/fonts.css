@@ -27,6 +27,13 @@
   font-weight: 500;
   src: url("../fonts/oswald-v57-latin-500.woff2") format("woff2");
 }
+@font-face {
+  font-display: swap;
+  font-family: "Oswald";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/oswald-v57-latin-700.woff2") format("woff2");
+}
 
 @font-face {
   font-display: swap;
@@ -51,6 +58,32 @@
   src: url("../fonts/google-sans-code-v14-latin-regular.woff2") format("woff2");
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "Dela Gothic One";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/dela-gothic-one-v19-japanese_latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ibm-plex-sans-jp-v7-japanese_latin-regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ibm-plex-sans-jp-v7-japanese_latin-700.woff2")
+    format("woff2");
+}
+
 @theme {
   --font-zain: "Zain", sans-serif;
   --font-playpen-sans: "Playpen Sans", handwriting;
@@ -58,4 +91,6 @@
   --font-fira-code: "Fira Code", monospace;
   --font-google-sans-flex: "Google Sans Flex", sans-serif;
   --font-google-sans-code: "Google Sans Code", monospace;
+  --font-dela-gothic-one: "Dela Gothic One", display;
+  --font-ibm-plex-sans-jp: "IBM Plex Sans JP", sans-serif;
 }

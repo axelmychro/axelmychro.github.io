@@ -8,27 +8,30 @@ const previewPosition = ref({ x: 0, y: 0 });
 const targetPosition = ref({ x: 0, y: 0 });
 const currentImage = ref("");
 
-import meImage from "~/assets/images/imathe.webp";
-import philosophyImage from "~/assets/images/imathe.webp";
-import styleImage from "~/assets/images/imathe.webp";
+import meImage from "~/assets/images/ID_Info_Update_Card.webp";
+import philosophyImage from "~/assets/images/Curio_Written_in_Water.webp";
+import styleImage from "~/assets/images/Curio_Punklorde_Mentality.webp";
 
 const buttons = [
   {
     id: "me",
     title: "me",
     katakana: "わたし",
+    subtitle: "Axel Ramadhan",
     image: meImage,
   },
   {
     id: "philosophy",
     title: "philosophy",
     katakana: "哲学",
+    subtitle: "sharp & clear",
     image: philosophyImage,
   },
   {
     id: "style",
     title: "style",
     katakana: "スタイル",
+    subtitle: "references",
     image: styleImage,
   },
 ];
@@ -79,26 +82,31 @@ onUnmounted(() => {
 
 <template>
   <Section id="about" bgColor="bg-neutral-950" @mousemove="handleMouseMove">
-    <div class="grid grid-cols-1 size-full items-center px-8">
+    <div class="grid grid-cols-1 size-full items-center p-8">
       <button
         v-for="button in buttons"
         :key="button.id"
         type="button"
-        class="group border-b-2 border-neutral-300 cursor-pointer w-full max-w-64 h-fit"
+        class="relative group border-b-2 border-neutral-300 cursor-pointer w-full max-w-xs h-fit flex items-end justify-between"
         @mouseenter="showPreview(button, $event)"
         @mouseleave="hidePreview()"
       >
         <h2
-          class="text-neutral-300 text-start text-2xl font-oswald uppercase group-hover:translate-x-8 group-hover:text-neutral-100 group-hover:text-shadow-[0_0_8px_rgba(0,0,0,1)] transition duration-500"
+          class="z-10 text-neutral-300 text-center text-2xl font-oswald font-bold uppercase group-hover:translate-x-8 group-hover:text-neutral-100 group-hover:text-shadow-[-2px_0_8px] group-focus:translate-x-8 group-focus:text-neutral-100 group-focus:text-shadow-[-2px_0_8px] text-shadow-black transition-all duration-500"
         >
           {{ button.title }}
-          <span class="text-sm">{{ button.katakana }}</span>
+          <span class="text-sm font-ibm-plex-sans-jp">{{ button.katakana }}</span>
         </h2>
+        <p
+          class="absolute right-0 text-4xl text-sky-300 uppercase font-oswald text-shadow-[2px_0_8px] text-shadow-black opacity-0 group-hover:opacity-80 group-focus:opacity-80 transition-opacity duration-500"
+        >
+          {{ button.subtitle }}
+        </p>
       </button>
     </div>
 
     <div
-      class="fixed pointer-events-none -z-10 transition-opacity transform -translate-x-1/2 -translate-y-1/2"
+      class="fixed pointer-events-none select-none -z-10 transition-opacity transform -translate-x-1/2 -translate-y-1/2"
       :class="previewVisible ? 'opacity-100' : 'opacity-0'"
       :style="{
         left: `${previewPosition.x}px`,
@@ -107,8 +115,8 @@ onUnmounted(() => {
     >
       <img
         :src="currentImage"
-        alt="Preview"
-        class="aspect-auto size-64 object-cover"
+        alt="Hey!"
+        class="aspect-auto min-w-64 max-w-64 min-h-64 max-h-64 object-cover"
       />
     </div>
 

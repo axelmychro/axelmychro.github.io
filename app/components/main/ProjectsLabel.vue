@@ -2,7 +2,7 @@
 
 <template>
   <p
-    class="absolute -left-18 lg:-left-47 top-16 lg:top-44 text-5xl lg:text-9xl font-oswald uppercase transform -rotate-90 text-gray-900 bg-blue-600/80 fade-mask px-2 pointer-events-none select-none"
+    class="absolute -z-20 -left-18 lg:-left-47 top-16 lg:top-44 text-5xl lg:text-9xl font-oswald uppercase transform -rotate-90 text-gray-900 bg-blue-600/80 fade-mask px-2 pointer-events-none select-none"
   >
     projects
   </p>
