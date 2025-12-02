@@ -22,10 +22,6 @@ const projects = [
     url: "https://github.com/axelmychro/scraptab-web",
   },
 ];
-
-import { ref } from "vue";
-const projectHovered = ref(false);
-const projectFocused = ref(false);
 </script>
 
 <template>
@@ -47,7 +43,7 @@ const projectFocused = ref(false);
             class="relative p-4 flex flex-row items-center justify-stretch overflow-hidden group"
           >
             <div
-              class="absolute left-0 top-0 bg-gray-100 h-full w-full -z-10 transition duration-300 -translate-x-full group-hover:translate-x-0 group-focus:translate-x-0"
+              class="absolute inset-0 bg-gray-100 size-full -z-10 transition duration-300 -translate-x-full group-hover:translate-x-0 group-focus:translate-x-0"
             ></div>
             <div
               class="flex flex-1 flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between border-b-2 border-gray-600"

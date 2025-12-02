@@ -1,68 +1,69 @@
 <template>
   <div
-    class="flex flex-col items-stretch justify-center w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-4xl h-fit"
+    class="flex flex-col items-stretch justify-center w-full h-fit max-w-xs sm:max-w-md md:max-w-xl"
   >
-    <div class="flex flex-col md:flex-row items-stretch justify-center">
-      <img
-        src="~/assets/images/imathe.webp"
-        alt="imathe"
-        class="aspect-4/3 w-full h-full max-h-32 sm:max-h-40 md:aspect-3/4 md:max-w-50 md:max-h-max p-2 md:p-0 bg-gray-950 object-contain rounded-t-md md:rounded-tr-none pointer-events-none select-none"
-      />
+    <div class="flex flex-col md:flex-row">
       <div
-        class="bg-purple-800 w-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"
+        class="bg-neutral-950 md:max-w-32 lg:max-w-full flex place-items-center p-2 md:p-0 rounded-t-md md:rounded-bl-md md:rounded-tr-none"
+      >
+        <img
+          src="~/assets/images/imathe.webp"
+          alt="imathe"
+          class="size-full max-h-32 md:max-h-full object-contain pointer-events-none select-none"
+        />
+      </div>
+
+      <div
+        class="bg-purple-800 size-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"
       >
         <h1
-          class="text-2xl sm:text-3xl text-gray-300 font-zain text-center md:text-start"
+          class="text-xl sm:text-2xl text-neutral-300 font-zain text-center md:text-start"
         >
           {{ $t("cardGreeting") }}
-          <span class="text-4xl sm:text-5xl text-gray-100 block">
+          <span class="text-2xl sm:text-4xl text-neutral-100 block">
             Axel Ramadhan!
           </span>
         </h1>
         <h2
-          class="text-3xl sm:text-4xl text-purple-300 font-oswald uppercase text-center md:text-start"
+          class="text-lg sm:text-xl text-purple-300 font-google-sans-code text-center md:text-start"
         >
           Junior Web Developer
         </h2>
-        <hr class="my-2" />
+        <hr class="my-2 border-t-2" />
         <div
-          class="flex flex-row items-center justify-center md:justify-end gap-8"
+          class="flex flex-row items-center justify-center md:justify-end gap-4"
         >
-          <div
-            class="flex flex-row gap-2 items-center justify-center md:justify-end"
-          >
-            <a
-              href="mailto:maxelramadhan@gmail.com"
-              class="bg-gray-950 text-gray-50 p-2 rounded-sm"
-              ><lucide-mail class="w-8 h-8 sm:w-10 sm:h-10"
-            /></a>
-            <a
-              href="https://linkedin.com/in/axelramadhan"
-              target="_blank"
-              class="bg-[#0077B5] text-gray-50 p-2 rounded-sm"
-              ><lucide-linkedin class="w-8 h-8 sm:w-10 sm:h-10"
-            /></a>
-            <a
-              href="https://github.com/axelmychro"
-              class="bg-gray-950 text-gray-50 p-2 rounded-sm"
-              ><lucide-github class="w-8 h-8 sm:w-10 sm:h-10"
-            /></a>
-          </div>
+          <a
+            href="mailto:maxelramadhan@gmail.com"
+            class="bg-neutral-950 text-neutral-50 p-2 rounded-xs"
+            ><lucide-mail class="size-4 sm:size-8"
+          /></a>
+          <a
+            href="https://linkedin.com/in/axelramadhan"
+            target="_blank"
+            class="bg-[#0077B5] text-white p-2 rounded-sm"
+            ><lucide-linkedin class="size-4 sm:size-8"
+          /></a>
+          <a
+            href="https://github.com/axelmychro"
+            class="bg-neutral-950 text-neutral-50 p-2 rounded-sm"
+            ><lucide-github class="size-4 sm:size-8"
+          /></a>
         </div>
       </div>
     </div>
-    <div class="flex flex-col lg:flex-row items-stretch justify-center">
+
+    <div class="flex flex-col lg:flex-row">
       <div
-        class="flex items-center w-full justify-center bg-neutral-800 p-2 py-4 lg:rounded-bl-sm shrink"
+        class="flex items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-sm"
       >
-        <p
-          class="text-xl font-fira-code sm:text-2xl text-neutral-100 text-center md:text-start"
-        >
+        <p class="sm:text-lg text-neutral-100 text-center md:text-start">
           {{ $t("cardBio") }}
         </p>
       </div>
+
       <div
-        class="flex flex-row bg-gray-950 p-2 gap-2 items-center justify-center md:justify-end rounded-b-sm lg:rounded-bl-none lg:justify-center lg:grid lg:grid-cols-3 lg:aspect-square lg:auto-rows-auto shrink-0"
+        class="flex flex-row bg-neutral-950 p-2 gap-2 place-items-center md:justify-end rounded-b-sm lg:rounded-bl-none lg:justify-center lg:grid lg:grid-cols-3 lg:aspect-square shrink-0"
       >
         <i class="devicon-nodejs-plain colored each-devicon"></i>
         <i class="devicon-git-plain colored each-devicon"></i>
@@ -82,6 +83,6 @@
 @import "~/assets/css/main.css";
 
 .each-devicon {
-  @apply text-xl sm:text-3xl transition-all duration-300 ease-in-out grayscale hover:grayscale-0 hover:-rotate-4 hover:scale-110;
+  @apply sm:text-xl transition-all duration-500 ease-in-out grayscale hover:grayscale-0 hover:-rotate-4 hover:scale-120 leading-none;
 }
 </style>
