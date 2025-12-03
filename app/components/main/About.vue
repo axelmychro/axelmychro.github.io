@@ -3,6 +3,8 @@ import Section from "../Section.vue";
 import AboutLabel from "./AboutLabel.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
+const showButtons = ref(true);
+
 const hoveredButton = ref<(typeof buttons)[0] | null>(null);
 const selectedButton = ref<(typeof buttons)[0] | null>(null);
 
@@ -56,14 +58,6 @@ function hidePreview() {
   hoveredButton.value = null;
 }
 
-function selectButton(button: (typeof buttons)[0]) {
-  if (selectedButton.value?.id === button.id) {
-    selectedButton.value = null;
-  } else {
-    selectedButton.value = button;
-  }
-}
-
 function updateTargetPosition(event: MouseEvent) {
   targetPosition.value = {
     x: event.clientX,
@@ -98,8 +92,18 @@ onUnmounted(() => {
 
 <template>
   <Section id="about" bgColor="bg-neutral-950" @mousemove="handleMouseMove">
-    <div class="flex flex-row size-full p-8 gap-8">
-      <div class="flex flex-col size-full max-w-xs justify-evenly shrink-0">
+    <div
+      class="flex size-full transition-all duration-1000"
+      :class="showButtons ? 'flex-row p-2 lg:p-8 gap-8' : 'flex-row p-0 gap-0'"
+    >
+      <div
+        class="flex flex-col size-full justify-evenly shrink-0 transition-all duration-1000"
+        :class="
+          showButtons
+            ? 'translate-x-0 opacity-100 blur-none max-w-xs'
+            : '-translate-x-full opacity-0 blur-3xl max-w-0'
+        "
+      >
         <button
           v-for="button in buttons"
           :key="button.id"
@@ -107,7 +111,11 @@ onUnmounted(() => {
           class="relative group border-b-2 border-gray-300 cursor-pointer w-full max-w-xs h-fit flex items-end justify-between"
           @mouseenter="showPreview(button, $event)"
           @mouseleave="hidePreview()"
-          @click="selectButton(button)"
+          @focus="selectedButton = button"
+          @click="
+            showButtons = false;
+            selectedButton = button;
+          "
         >
           <h2
             class="z-10 text-gray-300 text-center text-2xl font-oswald font-bold uppercase group-hover:translate-x-8 group-hover:text-gray-100 group-hover:text-shadow-[-2px_0_8px] group-focus:translate-x-8 group-focus:text-gray-100 group-focus:text-shadow-[-2px_0_8px] text-shadow-black transition-all duration-500"
@@ -126,7 +134,12 @@ onUnmounted(() => {
       </div>
 
       <div
-        class="hidden lg:flex flex-col bg-neutral-800/20 backdrop-blur-xs rounded-md p-8 gap-8 size-full"
+        class="relative flex flex-col place-items-start rounded-md p-2 lg:p-8 gap-8 size-full transition duration-1000"
+        :class="
+          showButtons
+            ? 'bg-neutral-800/20 backdrop-blur-xs opacity-0 lg:opacity-100'
+            : 'bg-neutral-800 opacity-100'
+        "
       >
         <h2 class="text-4xl font-oswald uppercase">
           {{ selectedButton?.title || hoveredButton?.title || "..." }}
@@ -137,6 +150,18 @@ onUnmounted(() => {
             selectedButton?.description || hoveredButton?.description || "..."
           }}
         </p>
+
+        <button
+          type="button"
+          class="bg-neutral-600 flex rounded-xs cursor-pointer absolute right-8 bottom-8 transition duration-300"
+          :class="showButtons ? 'opacity-0 scale-0' : 'opacity-100 scale-100'"
+          @click="
+            showButtons = true;
+            selectedButton = null;
+          "
+        >
+          <LucideChevronLeft class="size-8 text-neutral-300" />
+        </button>
       </div>
     </div>
 
@@ -151,7 +176,7 @@ onUnmounted(() => {
       <img
         :src="currentImage"
         alt="Hey!"
-        class="aspect-auto size-64 object-cover"
+        class="min-w-64 min-h-64 object-cover"
       />
     </div>
 
