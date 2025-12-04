@@ -1,14 +1,24 @@
 {
-  "index": "index",
-  "projects": "projects",
-  "about": "about",
-  "timeline": "timeline",
-  "contact": "contact",
-
-  "cardGreeting": "hey there, my name is...",
-  "cardBio": "first-year computer science student at Universitas Sumatera Utara. junior frontend developer",
-
-  "aboutMeDescription": "I'm Axel, a first-year computer science student who builds things mostly to see how far I can push my curiosity. I prefer learning by making — small ideas, quick iterations, and shipping whatever survives my perfectionism. Vue and Nuxt feel like home to me, so most of my experiments live there.",
-  "aboutPhilosophyDescription": "I believe the best interfaces are honest. Sharp lines, clear hierarchy, motion that feels intentional but never noisy — design that respects attention instead of begging for it. My approach is simple: remove what doesn't matter, refine what remains, and let the visuals tell the mood without overexplaining.",
-  "aboutStyleDescription": "My aesthetic pulls from modern web minimalism, Japanese typography energy, and a bit of gritty moodboard chaos. I like strong contrasts, tight grids, and layouts that feel deliberate rather than soft and rounded. If it looks like it belongs on a clean poster or an underground zine, it probably fits my style."
+  "section": {
+    "index": {
+      "card": {
+        "greeting": "hey there, my name is...",
+        "bio": "first-year computer science student at Universitas Sumatera Utara. junior frontend developer"
+      }
+    },
+    "projects": {},
+    "about": {
+      "me": {
+        "description": "I'm Axel, a first-year computer science student who builds things mostly to see how far I can push my curiosity. I prefer learning by making — small ideas, quick iterations, and shipping whatever survives my perfectionism. Vue and Nuxt feel like home to me, so most of my experiments live there."
+      },
+      "philosophy": {
+        "description": "I believe the best interfaces are honest. Sharp lines, clear hierarchy, motion that feels intentional but never noisy — design that respects attention instead of begging for it. My approach is simple: remove what doesn't matter, refine what remains, and let the visuals tell the mood without overexplaining."
+      },
+      "style": {
+        "description": "My aesthetic pulls from modern web minimalism, Japanese typography energy, and a bit of gritty moodboard chaos. I like strong contrasts, tight grids, and layouts that feel deliberate rather than soft and rounded. If it looks like it belongs on a clean poster or an underground zine, it probably fits my style."
+      }
+    },
+    "timeline": {},
+    "contact": {}
+  }
 }

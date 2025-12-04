@@ -1,93 +1,37 @@
 <script lang="ts" setup>
 import Section from "../Section.vue";
 import AboutLabel from "./AboutLabel.vue";
-import { ref, onMounted, onUnmounted } from "vue";
+import AboutCard from "./AboutCard.vue";
+import AboutMagic from "./AboutMagic.vue";
+
+import { ref, computed } from "vue";
+import { aboutButtons } from "./about";
 
 const showButtons = ref(true);
+const buttons = aboutButtons;
 
-const hoveredButton = ref<(typeof buttons)[0] | null>(null);
-const selectedButton = ref<(typeof buttons)[0] | null>(null);
+const hoveredButton = ref<(typeof aboutButtons)[0] | null>(null);
+const selectedButton = ref<(typeof aboutButtons)[0] | null>(null);
 
-const previewVisible = ref(false);
-const previewPosition = ref({ x: 0, y: 0 });
-const targetPosition = ref({ x: 0, y: 0 });
-const currentImage = ref("");
+const activeButton = computed(
+  () => selectedButton.value || hoveredButton.value
+);
 
-import meImage from "~/assets/images/ID_Info_Update_Card.webp";
-import philosophyImage from "~/assets/images/Curio_Written_in_Water.webp";
-import styleImage from "~/assets/images/Curio_Punklorde_Mentality.webp";
-
-const buttons = [
-  {
-    id: "me",
-    title: "me",
-    katakana: "わたし",
-    subtitle: "Axel Ramadhan",
-    description: $t("aboutMeDescription"),
-    image: meImage,
-  },
-  {
-    id: "philosophy",
-    title: "philosophy",
-    katakana: "哲学",
-    subtitle: "sharp & clear",
-    description: $t("aboutPhilosophyDescription"),
-    image: philosophyImage,
-  },
-  {
-    id: "style",
-    title: "style",
-    katakana: "スタイル",
-    subtitle: "moodboard",
-    description: $t("aboutStyleDescription"),
-    image: styleImage,
-  },
-];
-
-let animationFrame: number;
-
-function showPreview(button: (typeof buttons)[0], event: MouseEvent) {
-  previewVisible.value = true;
-  currentImage.value = button.image;
-  hoveredButton.value = button;
-  updateTargetPosition(event);
-}
-
-function hidePreview() {
-  previewVisible.value = false;
-  hoveredButton.value = null;
-}
-
-function updateTargetPosition(event: MouseEvent) {
-  targetPosition.value = {
+const mouse = ref({ x: 0, y: 0 });
+function handleMouseMove(event: MouseEvent) {
+  mouse.value = {
     x: event.clientX,
     y: event.clientY,
   };
 }
 
-function startAnimation() {
-  const animate = () => {
-    previewPosition.value.x +=
-      (targetPosition.value.x - previewPosition.value.x) * 0.05;
-    previewPosition.value.y +=
-      (targetPosition.value.y - previewPosition.value.y) * 0.05;
-
-    animationFrame = requestAnimationFrame(animate);
-  };
-  animate();
+function showPreview(button: (typeof buttons)[0]) {
+  hoveredButton.value = button;
 }
 
-function handleMouseMove(event: MouseEvent) {
-  updateTargetPosition(event);
+function hidePreview() {
+  hoveredButton.value = null;
 }
-
-onMounted(() => {
-  startAnimation();
-});
-
-onUnmounted(() => {
-  cancelAnimationFrame(animationFrame);
-});
 </script>
 
 <template>
@@ -109,7 +53,7 @@ onUnmounted(() => {
           :key="button.id"
           type="button"
           class="relative group border-b-2 border-gray-300 cursor-pointer w-full max-w-xs h-fit flex items-end justify-between"
-          @mouseenter="showPreview(button, $event)"
+          @mouseenter="showPreview(button)"
           @mouseleave="hidePreview()"
           @focus="selectedButton = button"
           @click="
@@ -141,20 +85,22 @@ onUnmounted(() => {
             : 'bg-neutral-800 opacity-100'
         "
       >
-        <h2 class="text-4xl font-oswald uppercase">
-          {{ selectedButton?.title || hoveredButton?.title || "..." }}
-        </h2>
+        <AboutCard v-if="activeButton" :button="activeButton" />
 
-        <p>
-          {{
-            selectedButton?.description || hoveredButton?.description || "..."
-          }}
-        </p>
+        <template v-if="!activeButton">
+          <h2 class="text-gray-500 text-4xl">...</h2>
+          <p class="text-gray-500 text-8xl place-self-center">...</p>
+          <button></button>
+        </template>
 
         <button
           type="button"
-          class="bg-neutral-600 flex rounded-xs cursor-pointer absolute right-8 bottom-8 transition duration-300"
-          :class="showButtons ? 'opacity-0 scale-0' : 'opacity-100 scale-100'"
+          class="bg-neutral-600 flex cursor-pointer absolute right-8 bottom-8 transition duration-300"
+          :class="
+            showButtons
+              ? 'opacity-0 scale-0 rounded-xs'
+              : 'opacity-100 scale-100 rounded-none'
+          "
           @click="
             showButtons = true;
             selectedButton = null;
@@ -165,21 +111,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div
-      class="fixed pointer-events-none select-none -z-10 transition-opacity transform -translate-x-1/2 -translate-y-1/2"
-      :class="previewVisible ? 'opacity-100' : 'opacity-0'"
-      :style="{
-        left: `${previewPosition.x}px`,
-        top: `${previewPosition.y}px`,
-      }"
-    >
-      <img
-        :src="currentImage"
-        alt="Hey!"
-        class="min-w-64 min-h-64 object-cover"
-      />
-    </div>
-
+    <AboutMagic :button="hoveredButton" :mouse="mouse" />
     <AboutLabel />
   </Section>
 </template>
