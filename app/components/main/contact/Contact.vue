@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Section from "../Section.vue";
+import Section from "~/components/Section.vue";
 </script>
 
 <template>

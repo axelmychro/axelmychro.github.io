@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
-import Footer from "./components/Footer.vue";
-import Overlay from "./components/Overlay.vue";
+import Header from "~/components/header/Header.vue";
+import Main from "~/components/main/Main.vue";
+import Footer from "~/components/footer/Footer.vue";
+import Overlay from "~/components/Overlay.vue";
 </script>
 <template>
   <Header />

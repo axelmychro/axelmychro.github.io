@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Credits from "./footer/Credits.vue";
+import Credits from "./Credits.vue";
 </script>
 
 <template>

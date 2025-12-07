@@ -1,17 +1,30 @@
 <script lang="ts" setup>
-import Section from "../Section.vue";
+import Section from "~/components/Section.vue";
 import AboutLabel from "./AboutLabel.vue";
 import AboutCard from "./AboutCard.vue";
 import AboutMagic from "./AboutMagic.vue";
 
 import { ref, computed } from "vue";
 import { aboutButtons } from "./about";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 const showButtons = ref(true);
 const buttons = aboutButtons;
 
 const hoveredButton = ref<(typeof aboutButtons)[0] | null>(null);
 const selectedButton = ref<(typeof aboutButtons)[0] | null>(null);
+
+const processedButton = computed(() => {
+  const button = selectedButton.value || hoveredButton.value;
+  if (!button) return null;
+
+  return {
+    ...button,
+    description: t(`section.about.${button.id}.description`),
+  };
+});
 
 const activeButton = computed(
   () => selectedButton.value || hoveredButton.value
@@ -78,21 +91,30 @@ function hidePreview() {
       </div>
 
       <div
-        class="relative flex flex-col place-items-start rounded-md p-2 lg:p-8 gap-8 size-full transition duration-1000"
+        class="relative flex flex-col p-2 lg:p-8 gap-2 lg:gap-8 size-full transition duration-1000"
         :class="
           showButtons
-            ? 'bg-neutral-800/20 backdrop-blur-xs opacity-0 lg:opacity-100'
-            : 'bg-neutral-800 opacity-100'
+            ? 'bg-neutral-800/20 backdrop-blur-xs opacity-0 lg:opacity-100 rounded-xl'
+            : 'bg-neutral-800 opacity-100 rounded-none'
         "
       >
-        <AboutCard v-if="activeButton" :button="activeButton" />
+        <p
+          v-if="!activeButton"
+          class="select-none pointer-events-none text-neutral-800 text-[12rem] leading-0 m-auto"
+        >
+          ...
+        </p>
+        <button
+          type="button"
+          class="*:size-8 *:text-neutral-800 gap-2 absolute right-8 bottom-8 flex flex-row *:transition duration-300 -z-10"
+          :class="
+            showButtons ? 'opacity-100 *:scale-100' : 'opacity-0 *:scale-0'
+          "
+        >
+          <LucidePlus /><LucideSquare /><LucideX /><LucideCircle />
+        </button>
 
-        <template v-if="!activeButton">
-          <h2 class="text-gray-500 text-4xl">...</h2>
-          <p class="text-gray-500 text-8xl place-self-center">...</p>
-          <button></button>
-        </template>
-
+        <AboutCard v-if="processedButton" :button="processedButton" />
         <button
           type="button"
           class="bg-neutral-600 flex cursor-pointer absolute right-8 bottom-8 transition duration-300"

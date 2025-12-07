@@ -8,7 +8,6 @@ export const aboutButtons = [
     title: "Me",
     katakana: "わたし",
     subtitle: "Axel Ramadhan",
-    description: "",
     image: meImage,
   },
   {
@@ -16,15 +15,13 @@ export const aboutButtons = [
     title: "Philosophy",
     katakana: "哲学",
     subtitle: "Sharp & clear",
-    description: "",
     image: philosophyImage,
   },
   {
     id: "style",
     title: "Style",
     katakana: "スタイル",
-    subtitle: "Moodboard",
-    description: "",
+    subtitle: "Reference",
     image: styleImage,
   },
 ];

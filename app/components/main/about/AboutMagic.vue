@@ -13,7 +13,6 @@ const targetPosition = ref({ x: 0, y: 0 });
 
 let animationFrame: number;
 
-// react to hovered button
 watch(
   () => props.button,
   (newButton) => {
@@ -26,7 +25,6 @@ watch(
   }
 );
 
-// react to mouse movement
 watch(
   () => props.mouse,
   (newPos) => {

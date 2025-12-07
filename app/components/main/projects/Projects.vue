@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Section from "../Section.vue";
+import Section from "~/components/Section.vue";
 import ProjectsLabel from "./ProjectsLabel.vue";
 
 const projects = [
