@@ -77,7 +77,7 @@ function hidePreview() {
           <h2
             class="z-10 text-gray-300 text-center text-2xl font-oswald font-bold uppercase group-hover:translate-x-8 group-hover:text-gray-100 group-hover:text-shadow-[-2px_0_8px] group-focus:translate-x-8 group-focus:text-gray-100 group-focus:text-shadow-[-2px_0_8px] text-shadow-black transition-all duration-500"
           >
-            {{ button.title }}
+            {{ t(`section.about.${button.id}.title`) }}
             <span class="text-sm font-ibm-plex-sans-jp">{{
               button.katakana
             }}</span>
@@ -85,13 +85,13 @@ function hidePreview() {
           <p
             class="absolute right-0 text-4xl text-sky-300 uppercase font-oswald text-shadow-[2px_0_8px] text-shadow-black opacity-0 group-hover:opacity-80 group-focus:opacity-80 transition-opacity duration-500"
           >
-            {{ button.subtitle }}
+            {{ t(`section.about.${button.id}.subtitle`) }}
           </p>
         </button>
       </div>
 
       <div
-        class="relative flex flex-col p-2 lg:p-8 gap-2 lg:gap-8 size-full transition duration-1000"
+        class="relative flex flex-col p-2 lg:p-8 gap-8 size-full transition duration-1000 min-w-full lg:min-w-auto"
         :class="
           showButtons
             ? 'bg-neutral-800/20 backdrop-blur-xs opacity-0 lg:opacity-100 rounded-xl'
@@ -117,7 +117,7 @@ function hidePreview() {
         <AboutCard v-if="processedButton" :button="processedButton" />
         <button
           type="button"
-          class="bg-neutral-600 flex cursor-pointer absolute right-8 bottom-8 transition duration-300"
+          class="bg-neutral-600 flex cursor-pointer absolute right-2 top-2 lg:right-8 lg:top-8 transition duration-300"
           :class="
             showButtons
               ? 'opacity-0 scale-0 rounded-xs'

@@ -5,23 +5,17 @@ import styleImage from "~/assets/images/Curio_Punklorde_Mentality.webp";
 export const aboutButtons = [
   {
     id: "me",
-    title: "Me",
     katakana: "わたし",
-    subtitle: "Axel Ramadhan",
     image: meImage,
   },
   {
     id: "philosophy",
-    title: "Philosophy",
     katakana: "哲学",
-    subtitle: "Sharp & clear",
     image: philosophyImage,
   },
   {
     id: "style",
-    title: "Style",
     katakana: "スタイル",
-    subtitle: "Reference",
     image: styleImage,
   },
 ];
