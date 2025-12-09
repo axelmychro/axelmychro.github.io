@@ -10,8 +10,9 @@ const props = defineProps<{
   };
 }>();
 
-const localizedTitle = t(`section.about.${props.button.id}.title`);
-const localizedDescription = t(`section.about.${props.button.id}.description`);
+const l7dTitle = t(`section.about.${props.button.id}.title`);
+const l7dDescription = t(`section.about.${props.button.id}.description`);
+const l7dReason = t(`section.about.${props.button.id}.reason`);
 
 const l7dColours = `section.about.style.colours.`;
 const colours = {
@@ -128,13 +129,16 @@ const fontLinks = [
 </script>
 
 <template>
-  <div class="space-y-2">
+  <div
+    class="space-y-2 [&>p]:text-gray-300 [&>p]:text-base [&>p]:leading-relaxed [&>p]:max-w-lg"
+  >
     <h2 class="text-4xl font-oswald uppercase">
-      {{ localizedTitle }}
+      {{ l7dTitle }}
     </h2>
-    <p class="text-gray-300 text-base leading-relaxed max-w-lg">
-      {{ localizedDescription }}
+    <p>
+      {{ l7dDescription }}
     </p>
+    <p v-if="props.button.id === 'philosophy'">{{ l7dReason }}</p>
   </div>
 
   <template v-if="props.button.id === 'style'">

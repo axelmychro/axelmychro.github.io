@@ -3,7 +3,7 @@
     "index": {
       "card": {
         "greeting": "hey there, my name is...",
-        "bio": "first-year computer science student at Universitas Sumatera Utara. junior frontend developer"
+        "bio": "First-year computer science student at Universitas Sumatera Utara. Junior frontend developer"
       }
     },
     "projects": {},
@@ -11,12 +11,13 @@
       "me": {
         "title": "Me",
         "subtitle": "Axel Ramadhan",
-        "description": "First-year computer science student, self-taught programmer, and junior frontend developer. I build websites with Vue and/or Nuxt. "
+        "description": "First-year computer science student, self-taught programmer, and junior frontend developer. I build websites with Vue and/or Nuxt. Also codes with MCR playing in the background."
       },
       "philosophy": {
         "title": "Philosophy",
         "subtitle": "Sharp & clear",
-        "description": "Contrasting colours, readable fonts, minimal elements so that you may focus on the screen. Rounded edges? Not today, thank you. Sharp, clear, and self-explanatory features for the win."
+        "description": "Contrasting colours, readable fonts, minimal elements so that you may focus on the screen. Rounded edges? Not today, thank you. Sharp, clear, and self-explanatory features for the win. I love Vue and Nuxt.",
+        "reason": "I believe in component reusability. Smaller, focused workspaces make debugging far more efficient than monolithic structures."
       },
 
       "style": {

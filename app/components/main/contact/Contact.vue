@@ -3,7 +3,7 @@ import Section from "~/components/Section.vue";
 </script>
 
 <template>
-  <Section id="contact"> </Section>
+  <Section id="contact"> to-do </Section>
 </template>
 
 <style scoped></style>

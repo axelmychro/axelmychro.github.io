@@ -14,7 +14,7 @@
       </div>
 
       <div
-        class="bg-purple-800 size-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"
+        class="bg-purple-800 w-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"
       >
         <h1
           class="text-xl sm:text-2xl text-neutral-300 font-zain text-center md:text-start"
@@ -27,14 +27,14 @@
         <h2
           class="text-lg sm:text-xl text-purple-300 font-google-sans-code text-center md:text-start"
         >
-          Junior Web Developer
+          Junior Frontend Developer
         </h2>
         <hr class="my-2 border-t-2" />
         <div
           class="flex flex-row items-center justify-center md:justify-end gap-4 [&>a]:p-2 [&>a]:rounded-sm"
         >
           <a
-            href="mailto:maxelramadhan@gmail.com"
+            href="mailto:axelmychro@gmail.com"
             class="bg-neutral-950 text-neutral-50"
             ><lucide-mail class="size-4 sm:size-8"
           /></a>
@@ -55,7 +55,7 @@
 
     <div class="flex flex-col lg:flex-row">
       <div
-        class="flex items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-sm"
+        class="flex w-full items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-sm"
       >
         <p class="sm:text-lg text-neutral-100 text-center md:text-start">
           {{ $t("section.index.card.bio") }}
