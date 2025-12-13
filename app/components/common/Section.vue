@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps<{
-  id: string;
-  bgColor?: string;
-  textColor?: string;
-}>();
+  defineProps<{
+    id: string;
+    bgColor?: string;
+    textColor?: string;
+  }>();
 </script>
 
 <template>

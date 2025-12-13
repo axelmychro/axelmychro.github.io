@@ -1,4 +1,12 @@
 {
+  "nav": {
+    "index": "index",
+    "projects": "projects",
+    "about": "about",
+    "timeline": "timeline",
+    "contact": "contact"
+  },
+
   "section": {
     "index": {
       "card": {

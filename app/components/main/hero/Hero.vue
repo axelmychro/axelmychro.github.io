@@ -1,6 +1,6 @@
 <script setup>
-import Section from "~/components/Section.vue";
-import Card from "./Card.vue";
+  import Section from "~/components/common/Section.vue";
+  import Card from "./Card.vue";
 </script>
 <template>
   <Section id="index">

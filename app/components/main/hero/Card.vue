@@ -4,7 +4,7 @@
   >
     <div class="flex flex-col md:flex-row">
       <div
-        class="bg-neutral-950 md:max-w-32 lg:max-w-full flex place-items-center p-2 md:p-0 rounded-t-md md:rounded-bl-md md:rounded-tr-none"
+        class="bg-neutral-950 md:max-w-32 lg:max-w-full flex place-items-center p-2 md:p-0 rounded-t-md md:rounded-tr-none"
       >
         <img
           src="~/assets/images/imathe.webp"

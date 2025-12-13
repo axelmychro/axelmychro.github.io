@@ -1,9 +1,17 @@
 {
+  "nav": {
+    "index": "indeks",
+    "projects": "proyek",
+    "about": "tentang",
+    "timeline": "garis waktu",
+    "contact": "hubungi"
+  },
+
   "section": {
     "index": {
       "card": {
         "greeting": "hey there, my name is...",
-        "bio": "first-year computer science student at Universitas Sumatera Utara. junior frontend developer"
+        "bio": "First-year computer science student at Universitas Sumatera Utara. Junior frontend developer"
       }
     },
     "projects": {},

@@ -1,6 +1,10 @@
 @import "./fonts.css";
 @import "tailwindcss";
 
+html {
+  @apply bg-gray-900 text-gray-100 font-google-sans-flex;
+}
+
 body {
-  @apply relative bg-gray-900 text-gray-100 font-google-sans-flex w-full h-full;
+  @apply relative size-full;
 }

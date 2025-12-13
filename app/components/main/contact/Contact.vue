@@ -1,6 +1,6 @@
 nuxt 4, vue 3, tailwnd v4
 <script lang="ts" setup>
-import Section from "~/components/Section.vue";
+import Section from "~/components/common/Section.vue";
 </script>
 
 <template>

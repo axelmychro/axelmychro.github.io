@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Section from "~/components/Section.vue";
+import Section from "~/components/common/Section.vue";
 import AboutLabel from "./AboutLabel.vue";
 import AboutCard from "./AboutCard.vue";
 import AboutMagic from "./AboutMagic.vue";

@@ -1,27 +1,28 @@
 <script setup lang="ts">
-import Section from "~/components/Section.vue";
-import ProjectsLabel from "./ProjectsLabel.vue";
+  import Section from "~/components/common/Section.vue";
+  import ProjectsLabel from "./ProjectsLabel.vue";
 
-const projects = [
-  {
-    title: "Ryoran",
-    year: "2025",
-    date: "2025-09-28",
-    url: "https://github.com/axelmychro/ryoran",
-  },
-  {
-    title: "Priestess",
-    year: "2025",
-    date: "2025-09-28",
-    url: "https://github.com/axelmychro/priestess",
-  },
-  {
-    title: "Scraptab",
-    year: "2025",
-    date: "2025-11-9",
-    url: "https://github.com/axelmychro/scraptab-web",
-  },
-];
+  const myGH = "https://github.com/axelmychro/";
+  const projects = [
+    // {
+    //   title: "Ryoran",
+    //   year: "2025",
+    //   date: "2025-09-28",
+    //   url: `${myGH}ryoran`,
+    // },
+    {
+      title: "Priestess",
+      year: "2025",
+      date: "2025-09-28",
+      url: `${myGH}priestess`,
+    },
+    {
+      title: "Scraptab",
+      year: "2025",
+      date: "2025-11-9",
+      url: `${myGH}scraptab-web`,
+    },
+  ];
 </script>
 
 <template>
@@ -46,7 +47,7 @@ const projects = [
               class="absolute inset-0 bg-gray-100 size-full -z-10 transition duration-300 -translate-x-full group-hover:translate-x-0 group-focus:translate-x-0"
             ></div>
             <div
-              class="flex flex-1 flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between border-b-2 border-gray-600"
+              class="flex flex-1 flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between border-b-2 border-gray-500"
             >
               <h2
                 class="text-2xl transition-colors duration-300 text-gray-100 group-hover:text-gray-900 group-focus:text-gray-900"
@@ -55,12 +56,12 @@ const projects = [
               </h2>
               <time
                 :datetime="project.date"
-                class="text-xl sm:text-2xl text-fuchsia-300 transition-colors duration-700 group-hover:text-fuchsia-500 group-focus:text-fuchsia-500"
+                class="text-xl sm:text-2xl text-fuchsia-300 transition-colors duration-700 group-hover:text-fuchsia-700 group-focus:text-fuchsia-700"
                 >{{ project.year }}</time
               >
             </div>
             <LucideArrowUpRight
-              class="size-8 transition-colors duration-700 text-sky-300 group-hover:text-sky-500 group-focus:text-sky-500"
+              class="size-8 transition-colors duration-700 text-sky-300 group-hover:text-sky-700 group-focus:text-sky-700"
             />
           </a>
           <div
@@ -80,17 +81,17 @@ const projects = [
 </template>
 
 <style scoped>
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(-13deg);
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(-13deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(-11deg);
+    }
   }
-  50% {
-    transform: translateY(-10px) rotate(-11deg);
-  }
-}
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
 </style>
