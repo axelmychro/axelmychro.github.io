@@ -2,7 +2,7 @@
   import { onMounted, onUnmounted } from "vue";
 
   const linkItems = [
-    { label: "nav.index", icon: "House", href: "#" },
+    { label: "nav.home", icon: "House", href: "#" },
     { label: "nav.projects", icon: "Code", href: "#projects" },
     { label: "nav.about", icon: "Info", href: "#about" },
     { label: "nav.timeline", icon: "Map", href: "#timeline" },
@@ -58,14 +58,14 @@
       class="bg-black/50 lg:bg-transparent w-full h-screen lg:h-fit absolute lg:static inset-0 pl-2 pr-14 pt-16 flex lg:p-0 z-50 flex-1"
     >
       <div
-        class="flex flex-col lg:flex-row lg:items-center justify-start w-full lg:w-full h-screen lg:h-fit lg:gap-2 lg:px-8"
+        class="flex flex-col lg:flex-row lg:items-center justify-start lg:justify-end w-full lg:w-full h-screen lg:h-fit lg:gap-2 lg:mx-4"
       >
         <a
           v-for="item in linkItems"
           :key="item.label"
           :href="item.href"
           @click="closeLinks"
-          class="text-lg p-2 font-oswald uppercase leading-0 flex flex-row items-center justify-between border-b-2 lg:border-b-0 lg:gap-2 hover:text-sky-300 focus:text-sky-300 transition-colors duration-300"
+          class="text-lg text-gray-100 lg:text-inherit p-2 font-oswald uppercase leading-0 flex flex-row items-center justify-between border-b-2 lg:border-transparent lg:gap-2 hover:text-sky-300 focus:text-sky-300 hover:border-sky-300 focus:border-sky-300 transition-colors duration-300"
         >
           <LucideHouse v-if="item.icon === 'House'" />
           <LucideCode v-else-if="item.icon === 'Code'" />

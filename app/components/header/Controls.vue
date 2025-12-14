@@ -25,10 +25,10 @@
     <button
       @click="toggleLocale"
       type="button"
-      class="transition-all duration-300 active:scale-80 cursor-pointer relative text-gray-300"
+      class="transition-all duration-300 active:scale-90 cursor-pointer relative"
     >
       <lucide-languages class="size-8" :class="locale" /><span
-        class="absolute left-0 bottom-0 text-xs text-gray-400 font-fira-code uppercase leading-none"
+        class="absolute left-0 bottom-0 text-xs opacity-50 font-fira-code uppercase leading-none"
         >{{ locale }}</span
       >
     </button>
@@ -36,7 +36,7 @@
     <button
       @click="toggleTheme"
       type="button"
-      class="transition-all duration-300 active:scale-80 cursor-pointer text-gray-300"
+      class="transition-all duration-300 active:scale-90 cursor-pointer"
     >
       <lucide-moon v-if="theme === 'dark'" class="size-8" />
       <lucide-sun v-else-if="theme === 'light'" class="size-8" />
@@ -46,8 +46,8 @@
     <button
       @click="toggleSound"
       type="button"
-      class="transition-all duration-300 active:scale-80 cursor-pointer"
-      :class="sound ? 'text-gray-300' : 'text-gray-600'"
+      class="transition-all duration-300 active:scale-90 cursor-pointer"
+      :class="sound ? 'opacity-100' : 'opacity-50'"
     >
       <lucide-headphone-off v-if="sound === false" class="size-8" />
       <lucide-headphones v-else="sound === true" class="size-8" />

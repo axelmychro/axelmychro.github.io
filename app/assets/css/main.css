@@ -2,9 +2,25 @@
 @import "tailwindcss";
 
 html {
-  @apply bg-gray-900 text-gray-100 font-google-sans-flex;
+  @apply size-full max-w-full max-h-full bg-white dark:bg-black;
 }
 
 body {
-  @apply relative size-full;
+  @apply min-w-full min-h-screen relative font-google-sans-flex text-gray-900 dark:text-gray-100;
+}
+
+@media (width >= 40rem) {
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(2px) rotate(0.5deg);
+    }
+    50% {
+      transform: translateY(-2px) rotate(0deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
 }

@@ -1,10 +1,10 @@
 nuxt 4, vue 3, tailwnd v4
 <script lang="ts" setup>
-import Section from "~/components/common/Section.vue";
+  import Section from "~/components/Section.vue";
 </script>
 
 <template>
-  <Section id="contact" bg-color="bg-neutral-800" text-color="text-neutral-200">
+  <Section id="contact" txt="wow, you stayed?" class="">
     <div class="size-full p-2 flex flex-row items-center justify-center">
       <div class="flex flex-col gap-2 sm:gap-8 [&>div>div>time]:text-xs">
         <div class="flex flex-col gap-2">

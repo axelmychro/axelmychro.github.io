@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-stretch justify-center w-full h-fit max-w-xs sm:max-w-md md:max-w-xl"
+    class="bg-neutral-800 rounded-md flex flex-col items-stretch justify-center w-full h-fit max-w-xs sm:max-w-md md:max-w-xl"
   >
     <div class="flex flex-col md:flex-row">
       <div
@@ -29,13 +29,11 @@
         >
           Junior Frontend Developer
         </h2>
-        <hr class="my-2 border-t-2" />
+        <hr class="my-2 border-white" />
         <div
           class="flex flex-row items-center justify-center md:justify-end gap-4 [&>a]:p-2 [&>a]:rounded-sm"
         >
-          <a
-            href="mailto:axelmychro@gmail.com"
-            class="bg-neutral-950 text-neutral-50"
+          <a href="mailto:axelmychro@gmail.com" class="bg-black text-white"
             ><lucide-mail class="size-4 sm:size-8"
           /></a>
           <a
@@ -44,9 +42,7 @@
             class="bg-[#0077B5] text-white"
             ><lucide-linkedin class="size-4 sm:size-8"
           /></a>
-          <a
-            href="https://github.com/axelmychro"
-            class="bg-neutral-950 text-neutral-50"
+          <a href="https://github.com/axelmychro" class="bg-black text-white"
             ><lucide-github class="size-4 sm:size-8"
           /></a>
         </div>
@@ -55,7 +51,7 @@
 
     <div class="flex flex-col lg:flex-row">
       <div
-        class="flex w-full items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-sm"
+        class="flex w-full items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-md"
       >
         <p class="sm:text-lg text-neutral-100 text-center md:text-start">
           {{ $t("section.index.card.bio") }}
@@ -63,17 +59,17 @@
       </div>
 
       <div
-        class="[&>i]:sm:text-xl [&>i]:transition-all [&>i]:duration-500 [&>i]:ease-in-out [&>i]:grayscale [&>i]:hover:grayscale-0 [&>i]:hover:-rotate-4 [&>i]:hover:scale-120 [&>i]:leading-none flex flex-row bg-neutral-950 p-2 gap-2 place-items-center md:justify-end rounded-b-sm lg:rounded-bl-none lg:justify-center lg:grid lg:grid-cols-3 lg:aspect-square shrink-0"
+        class="[&>i]:sm:text-xl [&>i]:transition-all [&>i]:duration-300 [&>i]:grayscale-75 [&>i]:hover:grayscale-0 [&>i]:hover:scale-110 [&>i]:leading-none flex flex-row bg-neutral-950 p-2 gap-2 place-items-center md:justify-end rounded-b-md lg:rounded-bl-none lg:justify-center lg:grid lg:grid-cols-3 lg:aspect-square shrink-0"
       >
         <i class="devicon-nodejs-plain colored"></i>
+        <i class="devicon-vuejs-plain colored"></i>
+        <i class="devicon-nuxt-original colored"></i>
+        <i class="devicon-javascript-plain colored"></i>
         <i class="devicon-git-plain colored"></i>
         <i class="devicon-figma-plain colored"></i>
-        <i class="devicon-javascript-plain colored"></i>
         <i class="devicon-typescript-plain colored"></i>
         <i class="devicon-tailwindcss-original colored"></i>
         <i class="devicon-vite-plain colored"></i>
-        <i class="devicon-vuejs-plain colored"></i>
-        <i class="devicon-nuxt-original colored"></i>
       </div>
     </div>
   </div>

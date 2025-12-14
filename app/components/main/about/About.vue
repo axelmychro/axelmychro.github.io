@@ -1,14 +1,34 @@
 <script lang="ts" setup>
-import Section from "~/components/common/Section.vue";
-import AboutLabel from "./AboutLabel.vue";
+import Section from "~/components/Section.vue";
 import AboutCard from "./AboutCard.vue";
 import AboutMagic from "./AboutMagic.vue";
 
 import { ref, computed } from "vue";
-import { aboutButtons } from "./about";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
+
+import meImage from "~/assets/images/ID_Info_Update_Card.webp";
+import philosophyImage from "~/assets/images/Curio_Written_in_Water.webp";
+import styleImage from "~/assets/images/Curio_Punklorde_Mentality.webp";
+
+const aboutButtons = [
+  {
+    id: "me",
+    katakana: "わたし",
+    image: meImage,
+  },
+  {
+    id: "philosophy",
+    katakana: "哲学",
+    image: philosophyImage,
+  },
+  {
+    id: "style",
+    katakana: "スタイル",
+    image: styleImage,
+  },
+];
 
 const showButtons = ref(true);
 const buttons = aboutButtons;
@@ -27,7 +47,7 @@ const processedButton = computed(() => {
 });
 
 const activeButton = computed(
-  () => selectedButton.value || hoveredButton.value
+  () => selectedButton.value || hoveredButton.value,
 );
 
 const mouse = ref({ x: 0, y: 0 });
@@ -48,24 +68,28 @@ function hidePreview() {
 </script>
 
 <template>
-  <Section id="about" bgColor="bg-neutral-950" @mousemove="handleMouseMove">
+  <Section
+    id="about"
+    class="bg-linear-to-r from-zinc-50 via-neutral-50 to-stone-50 text-neutral-900 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950 dark:text-neutral-100"
+    @mousemove="handleMouseMove"
+  >
     <div
       class="flex size-full transition-all duration-1000"
-      :class="showButtons ? 'flex-row p-2 lg:p-8 gap-8' : 'flex-row p-0 gap-0'"
+      :class="showButtons ? 'flex-row gap-8 p-2 lg:p-8' : 'flex-row gap-0 p-0'"
     >
       <div
-        class="flex flex-col size-full justify-evenly shrink-0 transition-all duration-1000"
+        class="flex size-full shrink-0 flex-col justify-evenly transition-all duration-1000"
         :class="
           showButtons
-            ? 'translate-x-0 opacity-100 blur-none max-w-xs'
-            : '-translate-x-full opacity-0 blur-3xl max-w-0'
+            ? 'max-w-xs translate-x-0 opacity-100 blur-none'
+            : 'max-w-0 -translate-x-full opacity-0 blur-3xl'
         "
       >
         <button
           v-for="button in buttons"
           :key="button.id"
           type="button"
-          class="relative group border-b-2 border-gray-300 cursor-pointer w-full max-w-xs h-fit flex items-end justify-between"
+          class="group relative flex h-fit w-full max-w-xs cursor-pointer items-end justify-between border-b-2"
           @mouseenter="showPreview(button)"
           @mouseleave="hidePreview()"
           @focus="selectedButton = button"
@@ -75,15 +99,15 @@ function hidePreview() {
           "
         >
           <h2
-            class="z-10 text-gray-300 text-center text-2xl font-oswald font-bold uppercase group-hover:translate-x-8 group-hover:text-gray-100 group-hover:text-shadow-[-2px_0_8px] group-focus:translate-x-8 group-focus:text-gray-100 group-focus:text-shadow-[-2px_0_8px] text-shadow-black transition-all duration-500"
+            class="font-oswald z-10 text-center text-2xl font-bold uppercase opacity-50 transition-all duration-300 group-hover:translate-x-8 group-hover:opacity-100 group-hover:text-shadow-[-2px_0_2px] group-focus:translate-x-8 group-focus:opacity-100 group-focus:text-shadow-[-2px_0_2px]"
           >
             {{ t(`section.about.${button.id}.title`) }}
-            <span class="text-sm font-ibm-plex-sans-jp">{{
+            <span class="font-ibm-plex-sans-jp -z-10 text-sm">{{
               button.katakana
             }}</span>
           </h2>
           <p
-            class="absolute right-0 text-4xl text-sky-300 uppercase font-oswald text-shadow-[2px_0_8px] text-shadow-black opacity-0 group-hover:opacity-80 group-focus:opacity-80 transition-opacity duration-500"
+            class="font-oswald absolute right-0 bottom-0 text-4xl text-sky-500 uppercase opacity-0 transition-opacity duration-500 text-shadow-[2px_0_8px] text-shadow-black group-hover:opacity-80 group-focus:opacity-80"
           >
             {{ t(`section.about.${button.id}.subtitle`) }}
           </p>
@@ -91,37 +115,36 @@ function hidePreview() {
       </div>
 
       <div
-        class="relative flex flex-col p-2 lg:p-8 gap-8 size-full transition duration-1000 min-w-full lg:min-w-auto"
+        class="relative flex size-full min-w-full flex-col gap-8 p-2 transition duration-1000 lg:min-w-auto lg:p-8"
         :class="
           showButtons
-            ? 'bg-neutral-800/20 backdrop-blur-xs opacity-0 lg:opacity-100 rounded-xl'
-            : 'bg-neutral-800 opacity-100 rounded-none'
+            ? 'rounded-xs bg-neutral-800/40 opacity-0 backdrop-blur-xs lg:opacity-100'
+            : 'rounded-none bg-neutral-800/80 opacity-100'
         "
       >
         <p
           v-if="!activeButton"
-          class="select-none pointer-events-none text-neutral-800 text-[12rem] leading-0 m-auto"
+          class="pointer-events-none m-auto text-[12rem] leading-0 select-none"
         >
           ...
         </p>
-        <button
-          type="button"
-          class="*:size-8 *:text-neutral-800 gap-2 absolute right-8 bottom-8 flex flex-row *:transition duration-300 -z-10"
+        <div
+          class="absolute right-8 bottom-8 -z-10 flex flex-row gap-2 duration-300 *:size-8 *:opacity-20 *:transition"
           :class="
             showButtons ? 'opacity-100 *:scale-100' : 'opacity-0 *:scale-0'
           "
         >
           <LucidePlus /><LucideSquare /><LucideX /><LucideCircle />
-        </button>
+        </div>
 
         <AboutCard v-if="processedButton" :button="processedButton" />
         <button
           type="button"
-          class="bg-neutral-600 flex cursor-pointer absolute right-2 top-2 lg:right-8 lg:top-8 transition duration-300"
+          class="absolute top-2 right-2 flex cursor-pointer bg-neutral-600 transition duration-300 lg:top-8 lg:right-8"
           :class="
             showButtons
-              ? 'opacity-0 scale-0 rounded-xs'
-              : 'opacity-100 scale-100 rounded-none'
+              ? 'scale-0 rounded-xs opacity-0'
+              : 'scale-100 rounded-none opacity-100'
           "
           @click="
             showButtons = true;
@@ -134,6 +157,5 @@ function hidePreview() {
     </div>
 
     <AboutMagic :button="hoveredButton" :mouse="mouse" />
-    <AboutLabel />
   </Section>
 </template>

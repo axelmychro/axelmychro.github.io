@@ -1,5 +1,5 @@
 <template>
-  <Section id="timeline" bg-color="bg-neutral-950" text-color="text-neutral-50">
+  <Section id="timeline" txt="tempus fugit..." class="">
     <div class="p-2 flex flex-col size-full place-items-center">
       <div class="relative h-full space-y-2">
         <h3 class="text-4xl text-sky-300 text-end lg:-translate-x-32">2025</h3>

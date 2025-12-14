@@ -1,6 +1,6 @@
 {
   "nav": {
-    "index": "index",
+    "home": "index",
     "projects": "projects",
     "about": "about",
     "timeline": "timeline",
@@ -8,14 +8,18 @@
   },
 
   "section": {
-    "index": {
+    "home": {
+      "txt": "welcome to my world~",
       "card": {
         "greeting": "hey there, my name is...",
         "bio": "First-year computer science student at Universitas Sumatera Utara. Junior frontend developer"
       }
     },
-    "projects": {},
+    "projects": {
+      "txt": "what have i done?"
+    },
     "about": {
+      "txt": "curiosity is a dangerous thing, y'know..",
       "me": {
         "title": "Me",
         "subtitle": "Axel Ramadhan",
@@ -48,7 +52,11 @@
         }
       }
     },
-    "timeline": {},
-    "contact": {}
+    "timeline": {
+      "txt": "tempus fugit..."
+    },
+    "contact": {
+      "txt": "wow, you made it here!"
+    }
   }
 }
