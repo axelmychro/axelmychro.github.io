@@ -1,16 +1,15 @@
-nuxt 4, vue 3, tailwnd v4
 <script lang="ts" setup>
-  import Section from "~/components/Section.vue";
+import Section from "~/components/Section.vue";
 </script>
 
 <template>
   <Section id="contact" txt="wow, you stayed?" class="">
-    <div class="size-full p-2 flex flex-row items-center justify-center">
+    <div class="flex size-full flex-row items-center justify-center p-2">
       <div class="flex flex-col gap-2 sm:gap-8 [&>div>div>time]:text-xs">
         <div class="flex flex-col gap-2">
           <div class="flex items-end gap-2">
             <div
-              class="size-8 aspect-square bg-neutral-600 rounded-full flex items-center justify-center"
+              class="flex aspect-square size-8 items-center justify-center rounded-full bg-neutral-500"
             >
               <p class="font-zain">AR</p>
             </div>
@@ -19,7 +18,7 @@ nuxt 4, vue 3, tailwnd v4
           </div>
 
           <div
-            class="bg-purple-200 p-2 max-w-[90%] self-start rounded-xl rounded-tl-none"
+            class="max-w-[90%] self-start rounded-xl rounded-tl-none bg-purple-300 p-2"
           >
             <p class="text-neutral-800">
               since you've reached this part, why not reach me as well? let's
@@ -28,14 +27,14 @@ nuxt 4, vue 3, tailwnd v4
           </div>
 
           <div
-            class="bg-purple-200 p-2 max-w-[90%] self-start rounded-xl rounded-tl-none"
+            class="max-w-[90%] self-start rounded-xl rounded-tl-none bg-purple-300 p-2"
           >
             <p class="text-neutral-800">
               <a
-                class="underline text-sky-800"
+                class="text-sky-800 underline"
                 href="mailto:axelmychro@gmail.com"
               >
-                <LucideMail class="size-4 inline m-px" />
+                <LucideMail class="m-px inline size-4" />
                 axelmychro@gmail.com
               </a>
             </p>
@@ -45,7 +44,7 @@ nuxt 4, vue 3, tailwnd v4
         <div class="flex flex-col gap-2">
           <div class="flex items-end gap-2 self-end">
             <div
-              class="size-8 aspect-square bg-neutral-600 rounded-full flex items-center justify-center"
+              class="flex aspect-square size-8 items-center justify-center rounded-full bg-neutral-500"
             >
               <p class="font-zain">U</p>
             </div>
@@ -54,7 +53,7 @@ nuxt 4, vue 3, tailwnd v4
           </div>
 
           <p
-            class="bg-emerald-800 p-2 max-w-[90%] self-end rounded-xl rounded-br-none text-neutral-200"
+            class="max-w-[90%] self-end rounded-xl rounded-br-none bg-sky-300 p-2 text-neutral-800"
           >
             that's cool, but are you okay with casual talks?
           </p>
@@ -63,7 +62,7 @@ nuxt 4, vue 3, tailwnd v4
         <div class="flex flex-col gap-2">
           <div class="flex items-end gap-2">
             <div
-              class="size-8 aspect-square bg-neutral-600 rounded-full flex items-center justify-center"
+              class="flex aspect-square size-8 items-center justify-center rounded-full bg-neutral-500"
             >
               <p class="font-zain">AR</p>
             </div>
@@ -72,7 +71,7 @@ nuxt 4, vue 3, tailwnd v4
           </div>
 
           <div
-            class="bg-purple-200 p-2 max-w-[90%] self-start rounded-xl rounded-tl-none"
+            class="max-w-[90%] self-start rounded-xl rounded-tl-none bg-purple-300 p-2"
           >
             <p class="text-neutral-800">
               of course! you wanna just talk about games, it's fine
@@ -80,7 +79,7 @@ nuxt 4, vue 3, tailwnd v4
           </div>
 
           <div
-            class="bg-purple-200 p-2 max-w-[90%] self-start rounded-xl rounded-tl-none"
+            class="max-w-[90%] self-start rounded-xl rounded-tl-none bg-purple-300 p-2"
           >
             <p class="text-neutral-800">
               <a
@@ -88,13 +87,13 @@ nuxt 4, vue 3, tailwnd v4
                 target="_blank"
                 href="https://instagram.com/axelmychro"
               >
-                <LucideInstagram class="size-4 inline m-px" />@axelmychro
+                <LucideInstagram class="m-px inline size-4" />@axelmychro
               </a>
             </p>
           </div>
 
           <div
-            class="bg-purple-200 p-2 max-w-[90%] self-start rounded-xl rounded-tl-none"
+            class="max-w-[90%] self-start rounded-xl rounded-tl-none bg-purple-300 p-2"
           >
             <p class="text-neutral-800">thanks for visiting my portfolio!</p>
           </div>

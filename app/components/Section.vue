@@ -1,22 +1,22 @@
 <script setup lang="ts">
-  defineProps<{
-    id: string;
-  }>();
+defineProps<{
+  id: string;
+}>();
 </script>
 
 <template>
   <section
     :id="id"
-    class="relative w-full h-screen pt-16 pb-16 pr-12 lg:pr-32 overflow-hidden z-0"
+    class="relative z-0 h-screen w-full overflow-hidden pt-16 pr-12 pb-16 transition-colors duration-300 lg:pr-32"
   >
     <h2
-      class="font-oswald font-bold uppercase opacity-10 text-8xl leading-none absolute left-0 top-0 [writing-mode:vertical-lr] -z-10 select-none pointer-events-none whitespace-nowrap"
+      class="font-oswald pointer-events-none absolute top-0 left-0 -z-10 text-8xl leading-none font-bold whitespace-nowrap uppercase opacity-10 select-none [writing-mode:vertical-lr]"
     >
       ~/{{ id }}
     </h2>
     <slot />
     <small
-      class="font-dela-gothic-one lowercase opacity-90 text-4xl leading-none absolute right-0 bottom-0 -z-10 select-none pointer-events-none whitespace-nowrap"
+      class="font-dela-gothic-one pointer-events-none absolute right-2 bottom-2 -z-10 text-xs leading-none whitespace-nowrap lowercase opacity-90 select-none sm:text-sm md:text-base lg:text-lg xl:text-xl"
     >
       {{ $t(`section.${id}.txt`) }}
     </small>

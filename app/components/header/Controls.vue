@@ -1,34 +1,34 @@
 <script lang="ts" setup>
-  import { ref } from "vue";
-  const { locale, setLocale } = useI18n();
+import { ref } from "vue";
+const { locale, setLocale } = useI18n();
 
-  const theme = ref("dark");
-  const sound = ref(false);
+const colorMode = useColorMode();
+const sound = ref(false);
 
-  function toggleLocale() {
-    setLocale(locale.value === "en" ? "id" : "en");
-  }
+function toggleLocale() {
+  setLocale(locale.value === "en" ? "id" : "en");
+}
 
-  function toggleTheme() {
-    theme.value = theme.value === "dark" ? "light" : "dark";
-  }
+function toggleTheme() {
+  colorMode.preference = colorMode.preference === "light" ? "dark" : "light";
+}
 
-  function toggleSound() {
-    sound.value = !sound.value;
-  }
+function toggleSound() {
+  sound.value = !sound.value;
+}
 </script>
 
 <template>
   <div
-    class="flex flex-row gap-2 items-center justify-end px-4 lg:p-0 flex-1 lg:flex-none"
+    class="flex flex-1 flex-row items-center justify-end gap-2 px-4 lg:flex-none lg:p-0"
   >
     <button
       @click="toggleLocale"
       type="button"
-      class="transition-all duration-300 active:scale-90 cursor-pointer relative"
+      class="relative cursor-pointer transition-all duration-300 active:scale-90"
     >
       <lucide-languages class="size-8" :class="locale" /><span
-        class="absolute left-0 bottom-0 text-xs opacity-50 font-fira-code uppercase leading-none"
+        class="font-fira-code absolute bottom-0 left-0 text-xs leading-none uppercase opacity-50"
         >{{ locale }}</span
       >
     </button>
@@ -36,17 +36,17 @@
     <button
       @click="toggleTheme"
       type="button"
-      class="transition-all duration-300 active:scale-90 cursor-pointer"
+      class="cursor-pointer transition-all duration-300 active:scale-90"
     >
-      <lucide-moon v-if="theme === 'dark'" class="size-8" />
-      <lucide-sun v-else-if="theme === 'light'" class="size-8" />
-      <lucide-fan v-else class="size-8" />
+      <lucide-moon v-if="colorMode.value === 'dark'" class="size-8" />
+      <lucide-sun v-else-if="colorMode.value === 'light'" class="size-8" />
+      <lucide-orbit v-else class="size-8" />
     </button>
 
     <button
       @click="toggleSound"
       type="button"
-      class="transition-all duration-300 active:scale-90 cursor-pointer"
+      class="cursor-pointer transition-all duration-300 active:scale-90"
       :class="sound ? 'opacity-100' : 'opacity-50'"
     >
       <lucide-headphone-off v-if="sound === false" class="size-8" />

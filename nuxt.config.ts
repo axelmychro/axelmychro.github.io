@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxtjs/i18n",
     "nuxt-lucide-icons",
+    "@nuxtjs/color-mode",
   ],
 
   i18n: {
@@ -50,6 +51,10 @@ export default defineNuxtConfig({
       },
     ],
     langDir: "locales/",
+  },
+  colorMode: {
+    classSuffix: "",
+    preference: "light",
   },
 
   vite: {

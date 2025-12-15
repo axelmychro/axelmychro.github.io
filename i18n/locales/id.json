@@ -37,13 +37,15 @@
         "subtitle": "Reference",
         "description": "Here are some materials and references that I used throughout the website.",
         "colours": {
-          "primary": "primary",
-          "secondary": "secondary",
-          "main_background": "main background",
-          "sub_background": "sub background"
+          "primary": "A",
+          "secondary": "B",
+          "main_background": "BG1",
+          "sub_background": "BG2"
         },
         "fonts": {
           "title": "title",
+          "subtitle": "subtitle",
+          "jp": "カタカナ",
           "section": "section",
           "paragraph": "paragraph",
           "code1": "code[1]",
@@ -53,7 +55,15 @@
       }
     },
     "timeline": {
-      "txt": "tempus fugit..."
+      "txt": "tempus fugit...",
+      "august": {
+        "name": "August",
+        "description": "Started studying at Universitas Sumatera Utara"
+      },
+      "october": {
+        "name": "October",
+        "description": "Selected by GDGoC USU as a member of Web Development Pathway"
+      }
     },
     "contact": {
       "txt": "wow, you made it here!"

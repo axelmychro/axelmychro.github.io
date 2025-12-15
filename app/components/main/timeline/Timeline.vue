@@ -1,46 +1,48 @@
-<template>
-  <Section id="timeline" txt="tempus fugit..." class="">
-    <div class="p-2 flex flex-col size-full place-items-center">
-      <div class="relative h-full space-y-2">
-        <h3 class="text-4xl text-sky-300 text-end lg:-translate-x-32">2025</h3>
+<script lang="ts" setup></script>
 
+<template>
+  <Section id="timeline" txt="tempus fugit..." class="flex justify-center">
+    <div class="size-full max-w-lg items-center p-2">
+      <h3 class="text-6xl text-sky-300 text-shadow-xs">2025</h3>
+
+      <div class="relative">
         <div
-          class="absolute left-[30px] lg:left-1/2 inset-0 w-0 h-full border-l-4 border-neutral-600 -z-10"
+          class="absolute top-0 left-8 h-full shrink-0 border-r-2 border-neutral-900 dark:border-neutral-100"
         ></div>
 
-        <div
-          class="relative grid grid-cols-[auto_1fr] lg:flex lg:flex-col gap-y-8 lg:gap-y-32 gap-x-2 max-w-lg place-self-center"
-        >
-          <img
-            class="size-16 place-self-center border-4 border-neutral-600 rounded-full bg-neutral-950"
-            src="~/assets/images/USU.webp"
-            alt=""
-          />
-          <div
-            class="bg-neutral-800 flex flex-col p-2 rounded-xs rounded-br-xl lg:rounded-br-xs lg:absolute lg:translate-x-48 lg:min-w-64 lg:place-self-center"
-          >
-            <p class="">Started studying at Universitas Sumatera Utara</p>
-            <time
-              class="text-neutral-300 text-sm lg:absolute lg:-translate-x-72 lg:bg-neutral-800 lg:rounded-xs lg:p-2 lg:place-self-center"
-              datetime="2025-08-28"
-              >August</time
+        <div class="space-y-2">
+          <div class="flex">
+            <img
+              class="border-r-none z-10 aspect-square size-16 rounded-l-xs border-y-2 border-l-2 border-neutral-900 object-cover p-2 backdrop-blur-xs dark:border-neutral-100"
+              src="~/assets/images/USU.webp"
+              alt=""
+            />
+            <div
+              class="flex-1 rounded-r-xs border-2 border-neutral-900 p-2 backdrop-blur-xs dark:border-neutral-100"
             >
+              <p>{{ $t(`section.timeline.august.description`) }}</p>
+              <time class="font-dela-gothic-one block text-sm">{{
+                $t(`section.timeline.october.name`)
+              }}</time>
+            </div>
           </div>
 
-          <img
-            class="size-16 place-self-center border-4 border-neutral-600 rounded-full bg-neutral-950"
-            src="~/assets/images/GDGoC.webp"
-            alt=""
-          />
-          <div
-            class="bg-neutral-800 flex flex-col p-2 rounded-xs rounded-br-xl lg:rounded-br-xs lg:absolute lg:-translate-x-48 lg:translate-y-48 lg:min-w-64 lg:place-self-center"
-          >
-            <p class="lg:text-end">Selected by GDGoC USU as a member</p>
-            <time
-              class="text-neutral-300 text-sm lg:absolute lg:translate-x-72 lg:bg-neutral-800 lg:rounded-xs lg:p-2 lg:place-self-center"
-              datetime="2025-10-18"
-              >October</time
+          <div class="flex">
+            <img
+              class="border-r-none z-10 aspect-square size-16 rounded-l-xs border-y-2 border-l-2 border-neutral-900 object-cover p-2 backdrop-blur-xs dark:border-neutral-100"
+              src="~/assets/images/GDGoC.webp"
+              alt=""
+            />
+            <div
+              class="flex-1 rounded-r-xs border-2 border-neutral-900 p-2 backdrop-blur-xs dark:border-neutral-100"
             >
+              <p>
+                {{ $t(`section.timeline.october.description`) }}
+              </p>
+              <time class="font-dela-gothic-one block text-sm">{{
+                $t(`section.timeline.august.name`)
+              }}</time>
+            </div>
           </div>
         </div>
       </div>

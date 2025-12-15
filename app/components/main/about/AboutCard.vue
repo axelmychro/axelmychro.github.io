@@ -57,36 +57,25 @@ const colorButtons = ref([
   },
 ]);
 
-const copyToClipboard = async (color: string, event: MouseEvent) => {
-  const target = event.target as HTMLElement;
-  const originalText = target.innerText;
-
+const copiedColorId = ref<string | null>(null);
+const copyToClipboard = async (color: string, id: string) => {
   try {
     await navigator.clipboard.writeText(color);
+    copiedColorId.value = id;
 
-    target.innerText = `copied!`;
     setTimeout(() => {
-      target.innerText = originalText;
+      copiedColorId.value = null;
     }, 3000);
   } catch (err) {
     console.error("failed to copy:", err);
-    const textArea = document.createElement("textarea");
-    textArea.value = color;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
-
-    target.innerText = `copied!`;
-    setTimeout(() => {
-      target.innerText = originalText;
-    }, 3000);
   }
 };
 
 const l7dFonts = `section.about.style.fonts.`;
 const fonts = {
   title: t(`${l7dFonts}title`),
+  subtitle: t(`${l7dFonts}subtitle`),
+  jp: t(`${l7dFonts}jp`),
   section: t(`${l7dFonts}section`),
   paragraph: t(`${l7dFonts}paragraph`),
   code1: t(`${l7dFonts}code1`),
@@ -94,55 +83,63 @@ const fonts = {
   footer: t(`${l7dFonts}footer`),
 };
 
+const fontsSpecimen = "https://fonts.google.com/specimen/";
 const fontLinks = [
   {
     name: fonts.title,
-    url: "https://fonts.google.com/specimen/Zain",
-    class: "font-zain",
+    url: `${fontsSpecimen}Zain`,
+    class: "font-zain bg-sky-500 text-2xl",
+  },
+  {
+    name: fonts.subtitle,
+    url: `${fontsSpecimen}Dela+Gothic+One`,
+    class: "font-dela-gothic-one blur-[1px] text-xl",
+  },
+  {
+    name: fonts.jp,
+    url: `${fontsSpecimen}IBM+Plex+Sans+JP`,
+    class: "font-ibm-plex-sans-jp text-shadow-[-2px_0_8px] text-sm",
   },
   {
     name: fonts.section,
-    url: "https://fonts.google.com/specimen/Oswald",
-    class: "font-oswald",
+    url: `${fontsSpecimen}Oswald`,
+    class: "font-oswald uppercase text-lg",
   },
   {
     name: fonts.paragraph,
-    url: "https://fonts.google.com/specimen/Google+Sans+Flex",
-    class: "font-google-sans-flex",
+    url: `${fontsSpecimen}Google+Sans+Flex`,
+    class: "font-google-sans-flex bg-purple-500 text-neutral-100 text-base",
   },
   {
     name: fonts.code1,
-    url: "https://fonts.google.com/specimen/Fira+Code",
-    class: "font-fira-code",
+    url: `${fontsSpecimen}Fira+Code`,
+    class: "font-fira-code text-red-600 dark:text-red-400",
   },
   {
     name: fonts.code2,
-    url: "https://fonts.google.com/specimen/Google+Sans+Code",
-    class: "font-google-sans-code",
+    url: `${fontsSpecimen}Google+Sans+Code`,
+    class: "font-google-sans-code text-yellow-600 dark:text-yellow-400",
   },
   {
     name: fonts.footer,
-    url: "https://fonts.google.com/specimen/Playpen+Sans",
-    class: "font-playpen-sans",
+    url: `${fontsSpecimen}Playpen+Sans`,
+    class:
+      "font-playpen-sans text-sm bg-neutral-900 dark:bg-transparent text-fuchsia-300",
   },
 ];
 </script>
 
 <template>
-  <div
-    class="space-y-2 [&>p]:text-gray-300 [&>p]:text-base [&>p]:leading-relaxed [&>p]:max-w-lg"
-  >
-    <h2 class="text-4xl font-oswald uppercase">
+  <div class="space-y-2 [&>p]:max-w-lg [&>p]:text-xl [&>p]:leading-relaxed">
+    <h2 class="font-oswald text-6xl font-bold uppercase">
       {{ l7dTitle }}
     </h2>
     <p>
       {{ l7dDescription }}
     </p>
     <p v-if="props.button.id === 'philosophy'">{{ l7dReason }}</p>
-  </div>
 
-  <template v-if="props.button.id === 'style'">
-    <div class="space-y-2">
+    <template v-if="props.button.id === 'style'">
       <h3 class="text-2xl">
         Colours
         <span class="text-sm text-sky-300"
@@ -154,42 +151,46 @@ const fontLinks = [
           v-for="colorButton in colorButtons"
           :key="colorButton.id"
           type="button"
-          class="rounded-xs border-2 text-base px-2 cursor-pointer font-google-sans-code"
+          class="font-google-sans-code aspect-square size-16 cursor-pointer rounded-xs border-2 p-2"
           :class="[
             colorButton.bgClass,
             colorButton.borderClass,
             colorButton.textClass,
           ]"
-          @click="copyToClipboard(colorButton.hexColor, $event)"
+          @click="copyToClipboard(colorButton.hexColor, colorButton.id)"
         >
-          {{ colorButton.name }}
+          <template v-if="copiedColorId !== colorButton.id">
+            {{ colorButton.name }}
+          </template>
+          <template v-else>
+            <LucideClipboardCheck class="size-full" />
+          </template>
         </button>
       </div>
-    </div>
 
-    <div class="space-y-2">
       <h3 class="text-2xl">
         Fonts
         <span class="text-sm text-amber-300"
           >from
           <img
-            class="size-3.5 inline"
+            class="inline size-3.5"
             src="~/assets/icons/google_fonts.svg"
             alt=""
           />Google Fonts</span
         >
       </h3>
-      <div class="flex flex-row flex-wrap gap-2">
+      <div class="flex flex-row flex-wrap items-center gap-2">
         <a
           v-for="fontLink in fontLinks"
           :key="fontLink.name"
           :href="fontLink.url"
           target="_blank"
           :class="fontLink.class"
+          class="flex size-fit rounded-xs border-2 p-2 leading-none"
         >
           {{ fontLink.name }}
         </a>
       </div>
-    </div>
-  </template>
+    </template>
+  </div>
 </template>

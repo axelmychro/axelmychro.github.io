@@ -1,37 +1,37 @@
 <template>
   <div
-    class="bg-neutral-800 rounded-md flex flex-col items-stretch justify-center w-full h-fit max-w-xs sm:max-w-md md:max-w-xl"
+    class="flex h-fit w-full max-w-xs flex-col items-stretch justify-center rounded-md bg-neutral-800 sm:max-w-md md:max-w-xl"
   >
     <div class="flex flex-col md:flex-row">
       <div
-        class="bg-neutral-950 md:max-w-32 lg:max-w-full flex place-items-center p-2 md:p-0 rounded-t-md md:rounded-tr-none"
+        class="flex place-items-center rounded-t-md bg-neutral-950 p-2 md:max-w-32 md:rounded-tr-none md:p-0 lg:max-w-full"
       >
         <img
           src="~/assets/images/imathe.webp"
           alt="imathe"
-          class="size-full max-h-32 md:max-h-full object-contain pointer-events-none select-none"
+          class="pointer-events-none size-full max-h-32 object-contain select-none md:max-h-full"
         />
       </div>
 
       <div
-        class="bg-purple-800 w-full flex flex-col items-stretch justify-center p-2 py-4 md:rounded-tr-md"
+        class="flex w-full flex-col items-stretch justify-center bg-purple-800 p-2 py-4 md:rounded-tr-md"
       >
         <h1
-          class="text-xl sm:text-2xl text-neutral-300 font-zain text-center md:text-start"
+          class="font-zain text-center text-xl text-neutral-300 sm:text-2xl md:text-start"
         >
-          {{ $t("section.index.card.greeting") }}
-          <span class="text-2xl sm:text-4xl text-neutral-100 block">
+          {{ $t("section.home.card.greeting") }}
+          <span class="block text-2xl text-neutral-100 sm:text-4xl">
             Axel Ramadhan!
           </span>
         </h1>
         <h2
-          class="text-lg sm:text-xl text-purple-300 font-google-sans-code text-center md:text-start"
+          class="font-google-sans-code text-center text-lg text-purple-300 sm:text-xl md:text-start"
         >
           Junior Frontend Developer
         </h2>
         <hr class="my-2 border-white" />
         <div
-          class="flex flex-row items-center justify-center md:justify-end gap-4 [&>a]:p-2 [&>a]:rounded-sm"
+          class="flex flex-row items-center justify-center gap-4 md:justify-end [&>a]:rounded-sm [&>a]:p-2"
         >
           <a href="mailto:axelmychro@gmail.com" class="bg-black text-white"
             ><lucide-mail class="size-4 sm:size-8"
@@ -53,13 +53,13 @@
       <div
         class="flex w-full items-center justify-center bg-neutral-800 p-4 lg:rounded-bl-md"
       >
-        <p class="sm:text-lg text-neutral-100 text-center md:text-start">
-          {{ $t("section.index.card.bio") }}
+        <p class="text-center text-neutral-100 sm:text-lg md:text-start">
+          {{ $t("section.home.card.bio") }}
         </p>
       </div>
 
       <div
-        class="[&>i]:sm:text-xl [&>i]:transition-all [&>i]:duration-300 [&>i]:grayscale-75 [&>i]:hover:grayscale-0 [&>i]:hover:scale-110 [&>i]:leading-none flex flex-row bg-neutral-950 p-2 gap-2 place-items-center md:justify-end rounded-b-md lg:rounded-bl-none lg:justify-center lg:grid lg:grid-cols-3 lg:aspect-square shrink-0"
+        class="flex shrink-0 flex-row place-items-center gap-2 rounded-b-md bg-neutral-950 p-2 md:justify-end lg:grid lg:aspect-square lg:grid-cols-3 lg:justify-center lg:rounded-bl-none [&>i]:leading-none [&>i]:grayscale-75 [&>i]:transition [&>i]:duration-300 [&>i]:hover:grayscale-0 [&>i]:sm:text-xl"
       >
         <i class="devicon-nodejs-plain colored"></i>
         <i class="devicon-vuejs-plain colored"></i>
