@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) + [GSAP](https://gsap.com/) experiment.
+This is a simple link tree or link-in-bio page
 
 ## Getting Started
 
